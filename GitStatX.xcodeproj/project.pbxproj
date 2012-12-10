@@ -13,6 +13,10 @@
 		89075F5E1670F536001A318D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 89075F5C1670F536001A318D /* Credits.rtf */; };
 		89075F611670F536001A318D /* GSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89075F601670F536001A318D /* GSAppDelegate.m */; };
 		89075F641670F536001A318D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89075F621670F536001A318D /* MainMenu.xib */; };
+		89075F7016722D9F001A318D /* Icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 89075F6F16722D9F001A318D /* Icon.iconset */; };
+		89075F7216722E06001A318D /* gnuplot in Resources */ = {isa = PBXBuildFile; fileRef = 89075F7116722E06001A318D /* gnuplot */; };
+		89075F7416722E22001A318D /* gitstats in Resources */ = {isa = PBXBuildFile; fileRef = 89075F7316722E22001A318D /* gitstats */; };
+		89FDA25016724E26003BFE02 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89FDA24F16724E26003BFE02 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,10 @@
 		89075F5F1670F536001A318D /* GSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSAppDelegate.h; sourceTree = "<group>"; };
 		89075F601670F536001A318D /* GSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSAppDelegate.m; sourceTree = "<group>"; };
 		89075F631670F536001A318D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		89075F6F16722D9F001A318D /* Icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = Icon.iconset; sourceTree = "<group>"; };
+		89075F7116722E06001A318D /* gnuplot */ = {isa = PBXFileReference; lastKnownFileType = folder; path = gnuplot; sourceTree = "<group>"; };
+		89075F7316722E22001A318D /* gitstats */ = {isa = PBXFileReference; lastKnownFileType = folder; path = gitstats; sourceTree = "<group>"; };
+		89FDA24F16724E26003BFE02 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89FDA25016724E26003BFE02 /* WebKit.framework in Frameworks */,
 				89075F4E1670F536001A318D /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -47,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				89075F531670F536001A318D /* GitStatX */,
+				89075F6A1670F54C001A318D /* Resources */,
 				89075F4C1670F536001A318D /* Frameworks */,
 				89075F4A1670F536001A318D /* Products */,
 			);
@@ -63,6 +73,7 @@
 		89075F4C1670F536001A318D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				89FDA24F16724E26003BFE02 /* WebKit.framework */,
 				89075F4D1670F536001A318D /* Cocoa.framework */,
 				89075F4F1670F536001A318D /* Other Frameworks */,
 			);
@@ -100,6 +111,17 @@
 				89075F5C1670F536001A318D /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		89075F6A1670F54C001A318D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				89075F7316722E22001A318D /* gitstats */,
+				89075F7116722E06001A318D /* gnuplot */,
+				89075F6F16722D9F001A318D /* Icon.iconset */,
+			);
+			name = Resources;
+			path = GitStatX/Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +179,9 @@
 				89075F581670F536001A318D /* InfoPlist.strings in Resources */,
 				89075F5E1670F536001A318D /* Credits.rtf in Resources */,
 				89075F641670F536001A318D /* MainMenu.xib in Resources */,
+				89075F7016722D9F001A318D /* Icon.iconset in Resources */,
+				89075F7216722E06001A318D /* gnuplot in Resources */,
+				89075F7416722E22001A318D /* gitstats in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +321,7 @@
 				89075F691670F536001A318D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
