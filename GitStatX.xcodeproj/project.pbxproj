@@ -16,8 +16,40 @@
 		89075F7016722D9F001A318D /* Icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 89075F6F16722D9F001A318D /* Icon.iconset */; };
 		89075F7216722E06001A318D /* gnuplot in Resources */ = {isa = PBXBuildFile; fileRef = 89075F7116722E06001A318D /* gnuplot */; };
 		89075F7416722E22001A318D /* gitstats in Resources */ = {isa = PBXBuildFile; fileRef = 89075F7316722E22001A318D /* gitstats */; };
+		8941AA02167AE240002FDB30 /* GSMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8941AA01167AE240002FDB30 /* GSMainWindowController.m */; };
 		89FDA25016724E26003BFE02 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89FDA24F16724E26003BFE02 /* WebKit.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		89FDB5D61675D48D003BFE02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89FDB5C31675D48C003BFE02 /* ObjectiveGitFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = ObjectiveGit;
+		};
+		89FDB5D81675D48D003BFE02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89FDB5C31675D48C003BFE02 /* ObjectiveGitFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 04DB4645133AB57600D9C624;
+			remoteInfo = "ObjectiveGit-iOS";
+		};
+		89FDB5DA1675D48D003BFE02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89FDB5C31675D48C003BFE02 /* ObjectiveGitFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88F05A6B16011E5400B7AD1D;
+			remoteInfo = ObjectiveGitTests;
+		};
+		89FDB5E31675D499003BFE02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89FDB5C31675D48C003BFE02 /* ObjectiveGitFramework.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = ObjectiveGit;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		89075F491670F536001A318D /* GitStatX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitStatX.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,7 +68,10 @@
 		89075F6F16722D9F001A318D /* Icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = Icon.iconset; sourceTree = "<group>"; };
 		89075F7116722E06001A318D /* gnuplot */ = {isa = PBXFileReference; lastKnownFileType = folder; path = gnuplot; sourceTree = "<group>"; };
 		89075F7316722E22001A318D /* gitstats */ = {isa = PBXFileReference; lastKnownFileType = folder; path = gitstats; sourceTree = "<group>"; };
+		8941AA00167AE240002FDB30 /* GSMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSMainWindowController.h; sourceTree = "<group>"; };
+		8941AA01167AE240002FDB30 /* GSMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSMainWindowController.m; sourceTree = "<group>"; };
 		89FDA24F16724E26003BFE02 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		89FDB5C31675D48C003BFE02 /* ObjectiveGitFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ObjectiveGitFramework.xcodeproj; path = "objective-git/ObjectiveGitFramework.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +90,7 @@
 		89075F3E1670F536001A318D = {
 			isa = PBXGroup;
 			children = (
+				89FDA2DB1675D477003BFE02 /* Libraries */,
 				89075F531670F536001A318D /* GitStatX */,
 				89075F6A1670F54C001A318D /* Resources */,
 				89075F4C1670F536001A318D /* Frameworks */,
@@ -93,10 +129,12 @@
 		89075F531670F536001A318D /* GitStatX */ = {
 			isa = PBXGroup;
 			children = (
+				89075F541670F536001A318D /* Supporting Files */,
 				89075F5F1670F536001A318D /* GSAppDelegate.h */,
 				89075F601670F536001A318D /* GSAppDelegate.m */,
 				89075F621670F536001A318D /* MainMenu.xib */,
-				89075F541670F536001A318D /* Supporting Files */,
+				8941AA00167AE240002FDB30 /* GSMainWindowController.h */,
+				8941AA01167AE240002FDB30 /* GSMainWindowController.m */,
 			);
 			path = GitStatX;
 			sourceTree = "<group>";
@@ -124,6 +162,24 @@
 			path = GitStatX/Resources;
 			sourceTree = "<group>";
 		};
+		89FDA2DB1675D477003BFE02 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				89FDB5C31675D48C003BFE02 /* ObjectiveGitFramework.xcodeproj */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		89FDB5C41675D48C003BFE02 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				89FDB5D71675D48D003BFE02 /* ObjectiveGit.framework */,
+				89FDB5D91675D48D003BFE02 /* libObjectiveGit-iOS.a */,
+				89FDB5DB1675D48D003BFE02 /* ObjectiveGitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +194,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				89FDB5E41675D499003BFE02 /* PBXTargetDependency */,
 			);
 			name = GitStatX;
 			productName = GitStatX;
@@ -160,16 +217,47 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				English,
 			);
 			mainGroup = 89075F3E1670F536001A318D;
 			productRefGroup = 89075F4A1670F536001A318D /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 89FDB5C41675D48C003BFE02 /* Products */;
+					ProjectRef = 89FDB5C31675D48C003BFE02 /* ObjectiveGitFramework.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				89075F481670F536001A318D /* GitStatX */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		89FDB5D71675D48D003BFE02 /* ObjectiveGit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ObjectiveGit.framework;
+			remoteRef = 89FDB5D61675D48D003BFE02 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		89FDB5D91675D48D003BFE02 /* libObjectiveGit-iOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libObjectiveGit-iOS.a";
+			remoteRef = 89FDB5D81675D48D003BFE02 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		89FDB5DB1675D48D003BFE02 /* ObjectiveGitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ObjectiveGitTests.octest;
+			remoteRef = 89FDB5DA1675D48D003BFE02 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		89075F471670F536001A318D /* Resources */ = {
@@ -194,10 +282,19 @@
 			files = (
 				89075F5A1670F536001A318D /* main.m in Sources */,
 				89075F611670F536001A318D /* GSAppDelegate.m in Sources */,
+				8941AA02167AE240002FDB30 /* GSMainWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		89FDB5E41675D499003BFE02 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ObjectiveGit;
+			targetProxy = 89FDB5E31675D499003BFE02 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		89075F561670F536001A318D /* InfoPlist.strings */ = {
