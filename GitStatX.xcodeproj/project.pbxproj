@@ -16,6 +16,8 @@
 		89075F7016722D9F001A318D /* Icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 89075F6F16722D9F001A318D /* Icon.iconset */; };
 		89075F7216722E06001A318D /* gnuplot in Resources */ = {isa = PBXBuildFile; fileRef = 89075F7116722E06001A318D /* gnuplot */; };
 		89075F7416722E22001A318D /* gitstats in Resources */ = {isa = PBXBuildFile; fileRef = 89075F7316722E22001A318D /* gitstats */; };
+		8936ACEB167F76FF00EB60D5 /* GAAutoscrollTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8936ACE8167F76FF00EB60D5 /* GAAutoscrollTextView.m */; };
+		8936ACEC167F76FF00EB60D5 /* GACommandRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = 8936ACEA167F76FF00EB60D5 /* GACommandRunner.m */; };
 		8941AA02167AE240002FDB30 /* GSMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8941AA01167AE240002FDB30 /* GSMainWindowController.m */; };
 		89FDA25016724E26003BFE02 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89FDA24F16724E26003BFE02 /* WebKit.framework */; };
 /* End PBXBuildFile section */
@@ -68,6 +70,10 @@
 		89075F6F16722D9F001A318D /* Icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = Icon.iconset; sourceTree = "<group>"; };
 		89075F7116722E06001A318D /* gnuplot */ = {isa = PBXFileReference; lastKnownFileType = folder; path = gnuplot; sourceTree = "<group>"; };
 		89075F7316722E22001A318D /* gitstats */ = {isa = PBXFileReference; lastKnownFileType = folder; path = gitstats; sourceTree = "<group>"; };
+		8936ACE7167F76FF00EB60D5 /* GAAutoscrollTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAAutoscrollTextView.h; sourceTree = "<group>"; };
+		8936ACE8167F76FF00EB60D5 /* GAAutoscrollTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAAutoscrollTextView.m; sourceTree = "<group>"; };
+		8936ACE9167F76FF00EB60D5 /* GACommandRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GACommandRunner.h; sourceTree = "<group>"; };
+		8936ACEA167F76FF00EB60D5 /* GACommandRunner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GACommandRunner.m; sourceTree = "<group>"; };
 		8941AA00167AE240002FDB30 /* GSMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSMainWindowController.h; sourceTree = "<group>"; };
 		8941AA01167AE240002FDB30 /* GSMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSMainWindowController.m; sourceTree = "<group>"; };
 		89FDA24F16724E26003BFE02 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -162,9 +168,21 @@
 			path = GitStatX/Resources;
 			sourceTree = "<group>";
 		};
+		8936ACE6167F76FF00EB60D5 /* GACommandRunner */ = {
+			isa = PBXGroup;
+			children = (
+				8936ACE7167F76FF00EB60D5 /* GAAutoscrollTextView.h */,
+				8936ACE8167F76FF00EB60D5 /* GAAutoscrollTextView.m */,
+				8936ACE9167F76FF00EB60D5 /* GACommandRunner.h */,
+				8936ACEA167F76FF00EB60D5 /* GACommandRunner.m */,
+			);
+			path = GACommandRunner;
+			sourceTree = "<group>";
+		};
 		89FDA2DB1675D477003BFE02 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				8936ACE6167F76FF00EB60D5 /* GACommandRunner */,
 				89FDB5C31675D48C003BFE02 /* ObjectiveGitFramework.xcodeproj */,
 			);
 			path = Libraries;
@@ -283,6 +301,8 @@
 				89075F5A1670F536001A318D /* main.m in Sources */,
 				89075F611670F536001A318D /* GSAppDelegate.m in Sources */,
 				8941AA02167AE240002FDB30 /* GSMainWindowController.m in Sources */,
+				8936ACEB167F76FF00EB60D5 /* GAAutoscrollTextView.m in Sources */,
+				8936ACEC167F76FF00EB60D5 /* GACommandRunner.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
