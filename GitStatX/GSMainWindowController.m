@@ -71,6 +71,19 @@
 }
 
 
+#pragma mark - Helper methods
+
+- (GSProjectInfo *)clickedProject {
+    NSInteger clickedRow = [projectsOutlineView clickedRow];
+    GSProjectInfo *project = nil;
+    if (clickedRow != -1) {
+        project = [projectsOutlineView itemAtRow:clickedRow];
+    }
+    
+    return project;
+}
+
+
 #pragma mark - Actions
 
 - (void)addProjectClicked:(id)sender {
@@ -100,6 +113,47 @@
     project.path = @"Hello";
     [project save];
     [self reloadData];
+}
+
+
+- (void)showInFinder:(id)sender {
+    if ([self clickedProject]) {
+        [[NSWorkspace sharedWorkspace] selectFile:[self clickedProject].path
+                         inFileViewerRootedAtPath:nil];
+    }
+}
+
+
+- (void)renameProject:(id)sender {
+    
+}
+
+
+- (void)deleteProject:(id)sender {
+    GSProjectInfo *project = [self clickedProject];
+    if (project != nil) {
+        NSInteger result = [[NSAlert alertWithMessageText:@"Delete Project"
+                                            defaultButton:@"Remove Project Stats"
+                                          alternateButton:@"Cancel"
+                                              otherButton:nil
+                                informativeTextWithFormat:@"It will remove stats of the project %@, NOTHING in repository will be deleted.", project.name] runModal];
+        
+        if (result == NSAlertDefaultReturn) {
+            [project deleteObjectCascade:YES];
+            [self reloadData];
+        }
+    }
+}
+
+
+- (void)setProjectType:(id)sender {
+    GSProjectInfo *project = [self clickedProject];
+    if (project) {
+        NSString *type = [[[sender title] lowercaseString] stringByReplacingOccurrencesOfString:@" " withString:@""];
+        project.projectType = type;
+        [project save];
+        [self reloadData];
+    }
 }
 
 

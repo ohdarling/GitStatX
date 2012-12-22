@@ -15,6 +15,10 @@
     
     self.textField.stringValue = project.name ?: @"";
     
+    NSString *typeName = project.projectType ?: @"default";
+    NSString *imageName = [@"project_" stringByAppendingString:typeName];
+    self.imageView.image = [NSImage imageNamed:imageName];
+    
     if (project.repository) {
         pathField.stringValue = project.path ?: @"";
         branchField.stringValue = project.currentBranch ?: @"";

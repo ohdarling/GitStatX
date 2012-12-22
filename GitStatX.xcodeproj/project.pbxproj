@@ -36,11 +36,19 @@
 		8936AD541681B11700EB60D5 /* UIImage-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 8936AD441681B11700EB60D5 /* UIImage-SQLitePersistence.m */; };
 		8936AD561681B12A00EB60D5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8936AD551681B12A00EB60D5 /* libsqlite3.dylib */; };
 		8941AA02167AE240002FDB30 /* GSMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8941AA01167AE240002FDB30 /* GSMainWindowController.m */; };
-		89A6B44C1685B56600884DF7 /* git.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B44B1685B56600884DF7 /* git.png */; };
+		89A6B46F1686012D00884DF7 /* project_default_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B4631686012D00884DF7 /* project_default_small.png */; };
+		89A6B4701686012D00884DF7 /* project_default_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B4641686012D00884DF7 /* project_default_small@2x.png */; };
+		89A6B4711686012D00884DF7 /* project_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B4651686012D00884DF7 /* project_default.png */; };
+		89A6B4721686012D00884DF7 /* project_php_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B4661686012D00884DF7 /* project_php_small.png */; };
+		89A6B4731686012D00884DF7 /* project_php_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B4671686012D00884DF7 /* project_php_small@2x.png */; };
+		89A6B4741686012D00884DF7 /* project_php.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B4681686012D00884DF7 /* project_php.png */; };
+		89A6B4751686012D00884DF7 /* project_rubyonrails_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B4691686012D00884DF7 /* project_rubyonrails_small.png */; };
+		89A6B4761686012D00884DF7 /* project_rubyonrails_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B46A1686012D00884DF7 /* project_rubyonrails_small@2x.png */; };
+		89A6B4771686012D00884DF7 /* project_rubyonrails.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B46B1686012D00884DF7 /* project_rubyonrails.png */; };
+		89A6B4781686012D00884DF7 /* project_xcodeproject_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B46C1686012D00884DF7 /* project_xcodeproject_small.png */; };
+		89A6B4791686012D00884DF7 /* project_xcodeproject_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B46D1686012D00884DF7 /* project_xcodeproject_small@2x.png */; };
+		89A6B47A1686012D00884DF7 /* project_xcodeproject.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B46E1686012D00884DF7 /* project_xcodeproject.png */; };
 		89B140991682F94500253CE1 /* GSProjectInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B140981682F94500253CE1 /* GSProjectInfo.m */; };
-		89B140AE16847B3500253CE1 /* rubyonrails.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B140AC16847B3500253CE1 /* rubyonrails.png */; };
-		89B140AF16847B3500253CE1 /* xcodeproj.icns in Resources */ = {isa = PBXBuildFile; fileRef = 89B140AD16847B3500253CE1 /* xcodeproj.icns */; };
-		89B140B116847B9D00253CE1 /* php.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B140B016847B9D00253CE1 /* php.png */; };
 		89B140B71685731000253CE1 /* ObjectiveGit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89FDB5D71675D48D003BFE02 /* ObjectiveGit.framework */; };
 		89B140BB16857A9500253CE1 /* GSProjectInfoCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B140BA16857A9500253CE1 /* GSProjectInfoCellView.m */; };
 		89FDA25016724E26003BFE02 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89FDA24F16724E26003BFE02 /* WebKit.framework */; };
@@ -133,12 +141,20 @@
 		8936AD551681B12A00EB60D5 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		8941AA00167AE240002FDB30 /* GSMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSMainWindowController.h; sourceTree = "<group>"; };
 		8941AA01167AE240002FDB30 /* GSMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSMainWindowController.m; sourceTree = "<group>"; };
-		89A6B44B1685B56600884DF7 /* git.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = git.png; sourceTree = "<group>"; };
+		89A6B4631686012D00884DF7 /* project_default_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = project_default_small.png; sourceTree = "<group>"; };
+		89A6B4641686012D00884DF7 /* project_default_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "project_default_small@2x.png"; sourceTree = "<group>"; };
+		89A6B4651686012D00884DF7 /* project_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = project_default.png; sourceTree = "<group>"; };
+		89A6B4661686012D00884DF7 /* project_php_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = project_php_small.png; sourceTree = "<group>"; };
+		89A6B4671686012D00884DF7 /* project_php_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "project_php_small@2x.png"; sourceTree = "<group>"; };
+		89A6B4681686012D00884DF7 /* project_php.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = project_php.png; sourceTree = "<group>"; };
+		89A6B4691686012D00884DF7 /* project_rubyonrails_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = project_rubyonrails_small.png; sourceTree = "<group>"; };
+		89A6B46A1686012D00884DF7 /* project_rubyonrails_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "project_rubyonrails_small@2x.png"; sourceTree = "<group>"; };
+		89A6B46B1686012D00884DF7 /* project_rubyonrails.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = project_rubyonrails.png; sourceTree = "<group>"; };
+		89A6B46C1686012D00884DF7 /* project_xcodeproject_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = project_xcodeproject_small.png; sourceTree = "<group>"; };
+		89A6B46D1686012D00884DF7 /* project_xcodeproject_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "project_xcodeproject_small@2x.png"; sourceTree = "<group>"; };
+		89A6B46E1686012D00884DF7 /* project_xcodeproject.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = project_xcodeproject.png; sourceTree = "<group>"; };
 		89B140971682F94500253CE1 /* GSProjectInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSProjectInfo.h; sourceTree = "<group>"; };
 		89B140981682F94500253CE1 /* GSProjectInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSProjectInfo.m; sourceTree = "<group>"; };
-		89B140AC16847B3500253CE1 /* rubyonrails.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rubyonrails.png; sourceTree = "<group>"; };
-		89B140AD16847B3500253CE1 /* xcodeproj.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = xcodeproj.icns; sourceTree = "<group>"; };
-		89B140B016847B9D00253CE1 /* php.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = php.png; sourceTree = "<group>"; };
 		89B140B916857A9500253CE1 /* GSProjectInfoCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSProjectInfoCellView.h; sourceTree = "<group>"; };
 		89B140BA16857A9500253CE1 /* GSProjectInfoCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSProjectInfoCellView.m; sourceTree = "<group>"; };
 		89FDA24F16724E26003BFE02 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -301,10 +317,18 @@
 		89B140AB16847B3500253CE1 /* ProjectTypes */ = {
 			isa = PBXGroup;
 			children = (
-				89A6B44B1685B56600884DF7 /* git.png */,
-				89B140B016847B9D00253CE1 /* php.png */,
-				89B140AC16847B3500253CE1 /* rubyonrails.png */,
-				89B140AD16847B3500253CE1 /* xcodeproj.icns */,
+				89A6B4631686012D00884DF7 /* project_default_small.png */,
+				89A6B4641686012D00884DF7 /* project_default_small@2x.png */,
+				89A6B4651686012D00884DF7 /* project_default.png */,
+				89A6B4661686012D00884DF7 /* project_php_small.png */,
+				89A6B4671686012D00884DF7 /* project_php_small@2x.png */,
+				89A6B4681686012D00884DF7 /* project_php.png */,
+				89A6B4691686012D00884DF7 /* project_rubyonrails_small.png */,
+				89A6B46A1686012D00884DF7 /* project_rubyonrails_small@2x.png */,
+				89A6B46B1686012D00884DF7 /* project_rubyonrails.png */,
+				89A6B46C1686012D00884DF7 /* project_xcodeproject_small.png */,
+				89A6B46D1686012D00884DF7 /* project_xcodeproject_small@2x.png */,
+				89A6B46E1686012D00884DF7 /* project_xcodeproject.png */,
 			);
 			path = ProjectTypes;
 			sourceTree = "<group>";
@@ -428,10 +452,18 @@
 				89075F7016722D9F001A318D /* Icon.iconset in Resources */,
 				89075F7216722E06001A318D /* gnuplot in Resources */,
 				89075F7416722E22001A318D /* gitstats in Resources */,
-				89B140AE16847B3500253CE1 /* rubyonrails.png in Resources */,
-				89B140AF16847B3500253CE1 /* xcodeproj.icns in Resources */,
-				89B140B116847B9D00253CE1 /* php.png in Resources */,
-				89A6B44C1685B56600884DF7 /* git.png in Resources */,
+				89A6B46F1686012D00884DF7 /* project_default_small.png in Resources */,
+				89A6B4701686012D00884DF7 /* project_default_small@2x.png in Resources */,
+				89A6B4711686012D00884DF7 /* project_default.png in Resources */,
+				89A6B4721686012D00884DF7 /* project_php_small.png in Resources */,
+				89A6B4731686012D00884DF7 /* project_php_small@2x.png in Resources */,
+				89A6B4741686012D00884DF7 /* project_php.png in Resources */,
+				89A6B4751686012D00884DF7 /* project_rubyonrails_small.png in Resources */,
+				89A6B4761686012D00884DF7 /* project_rubyonrails_small@2x.png in Resources */,
+				89A6B4771686012D00884DF7 /* project_rubyonrails.png in Resources */,
+				89A6B4781686012D00884DF7 /* project_xcodeproject_small.png in Resources */,
+				89A6B4791686012D00884DF7 /* project_xcodeproject_small@2x.png in Resources */,
+				89A6B47A1686012D00884DF7 /* project_xcodeproject.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

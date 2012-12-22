@@ -21,6 +21,11 @@
 }
 
 
+- (void)dealloc {
+    [super dealloc];
+}
+
+
 - (void)setPath:(NSString *)path {
     _path = [path copy];
     
@@ -35,6 +40,11 @@
 
 - (NSString *)name {
     return _name ?: self.path.lastPathComponent;
+}
+
+
+- (void)deleteObject {
+    [super deleteObject];
 }
 
 

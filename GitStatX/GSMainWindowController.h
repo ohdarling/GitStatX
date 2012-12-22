@@ -19,6 +19,11 @@
 - (IBAction)addFolderClicked:(id)sender;
 - (IBAction)removeFolderClicked:(id)sender;
 
+- (IBAction)showInFinder:(id)sender;
+- (IBAction)renameProject:(id)sender;
+- (IBAction)deleteProject:(id)sender;
+- (IBAction)setProjectType:(id)sender;
+
 @property (nonatomic, strong)   NSArray     *projects;
 
 @end
