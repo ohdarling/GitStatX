@@ -8,6 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface GSAppDelegate : NSObject <NSApplicationDelegate>
+#import "GSMainWindowController.h"
+
+@interface GSAppDelegate : NSObject <NSApplicationDelegate> {
+    IBOutlet    GSMainWindowController      *mainWindowController;
+}
 
 @end

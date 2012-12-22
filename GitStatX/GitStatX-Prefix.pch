@@ -4,4 +4,8 @@
 
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
+    #import <WebKit/WebKit.h>
+    #import "SQLiteInstanceManager.h"
+    #import "SQLitePersistentObject.h"
+    #import <ObjectiveGit/ObjectiveGit.h>
 #endif
