@@ -3,4 +3,4 @@
 	url = https://github.com/libgit2/objective-git.git
 [submodule "Libraries/sqlitepersistentobjects"]
 	path = Libraries/sqlitepersistentobjects
-	url = https://github.com/siannopollo/sqlitepersistentobjects.git
+url=https://github.com/ohdarling/SQLitePersistentObjects.git
