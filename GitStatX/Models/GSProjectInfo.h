@@ -11,9 +11,14 @@
 @interface GSProjectInfo : SQLitePersistentObject {
     GTRepository            *repository;
     
+    __strong NSArray        *_children;
 }
 
 - (NSString *)currentBranch;
+- (NSString *)statsPath;
+- (BOOL)statsExists;
+
+- (NSArray *)children;
 
 @property (nonatomic, readonly) GTRepository    *repository;
 @property (nonatomic, strong)   NSString        *name;
@@ -22,7 +27,6 @@
 @property (nonatomic, strong)   NSString        *projectType;
 @property (nonatomic, assign)   BOOL            isFolder;
 @property (nonatomic, assign)   int             parentId;
-@property (nonatomic, strong)   NSMutableArray  *children;
 @property (nonatomic, assign)   BOOL            expanded;
 
 @end

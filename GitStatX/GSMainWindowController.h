@@ -14,10 +14,8 @@
 }
 
 - (IBAction)addProjectClicked:(id)sender;
-- (IBAction)removeProjectClicked:(id)sender;
 
 - (IBAction)addFolderClicked:(id)sender;
-- (IBAction)removeFolderClicked:(id)sender;
 
 - (IBAction)showInFinder:(id)sender;
 - (IBAction)renameProject:(id)sender;

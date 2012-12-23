@@ -31,8 +31,6 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    [projectsOutlineView setFloatsGroupRows:NO];
-    
     [self reloadData];
 }
 
@@ -46,9 +44,8 @@
     }
     
     for (GSProjectInfo *project in projects) {
-        NSNumber *parentId = [NSNumber numberWithInt:project.parentId];
         if (project.parentId > 0) {
-            if (map[parentId] != nil) {
+            if ([GSProjectInfo findByPK:project.parentId] != nil) {
                 [map removeObjectForKey:[NSNumber numberWithInt:project.pk]];
             } else {
                 project.parentId = 0;
@@ -63,7 +60,7 @@
     
     [projectsOutlineView reloadData];
     
-    for (GSProjectInfo *project in self.projects) {
+    for (GSProjectInfo *project in projects) {
         if (project.expanded) {
             [projectsOutlineView expandItem:project];
         }
@@ -87,6 +84,8 @@
 #pragma mark - Actions
 
 - (void)addProjectClicked:(id)sender {
+    GSProjectInfo *clickedProject = [self clickedProject];
+    
     NSOpenPanel *panel = [NSOpenPanel openPanel];
     panel.canChooseDirectories = YES;
     panel.canChooseFiles = NO;
@@ -96,7 +95,16 @@
         if (result == NSFileHandlingPanelOKButton) {
             GSProjectInfo *project = [GSProjectInfo new];
             project.path = [panel.URL path];
+            
+            if (clickedProject != nil && clickedProject.isFolder) {
+                project.parentId = clickedProject.pk;
+                clickedProject.expanded = YES;
+                [clickedProject save];
+            }
+            
             [project save];
+            
+            [self reloadData];
         }
     }];
 }
@@ -108,9 +116,18 @@
 
 
 - (void)addFolderClicked:(id)sender {
+    GSProjectInfo *clickedProject = [self clickedProject];
+    
     GSProjectInfo *project = [GSProjectInfo new];
     project.isFolder = YES;
     project.path = @"Hello";
+    
+    if (clickedProject && clickedProject.isFolder) {
+        project.parentId = clickedProject.pk;
+        clickedProject.expanded = YES;
+        [clickedProject save];
+    }
+    
     [project save];
     [self reloadData];
 }
@@ -139,7 +156,7 @@
                                 informativeTextWithFormat:@"It will remove stats of the project %@, NOTHING in repository will be deleted.", project.name] runModal];
         
         if (result == NSAlertDefaultReturn) {
-            [project deleteObjectCascade:YES];
+            [project deleteObject];
             [self reloadData];
         }
     }
@@ -204,11 +221,6 @@
     }
     
     return view;
-}
-
-
-- (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(GSProjectInfo *)item {
-    return !item.isFolder;
 }
 
 
@@ -281,6 +293,11 @@
 - (BOOL)windowShouldClose:(id)sender {
     [self.window orderOut:nil];
     return NO;
+}
+
+
+- (void)windowDidBecomeMain:(NSNotification *)notification {
+    [projectsOutlineView setNeedsDisplay:YES];
 }
 
 

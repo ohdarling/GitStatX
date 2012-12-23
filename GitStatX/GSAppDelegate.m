@@ -22,6 +22,7 @@
 
 - (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag {
     [mainWindowController showWindow:nil];
+    return NO;
 }
 
 

@@ -12,15 +12,6 @@
 
 @synthesize repository;
 
-- (id)init {
-    if (self = [super init]) {
-        self.children = [NSMutableArray array];
-    }
-    
-    return self;
-}
-
-
 - (void)dealloc {
     [super dealloc];
 }
@@ -33,17 +24,47 @@
 }
 
 
-- (NSString *)currentBranch {
-    return [[repository currentBranchWithError:NULL] shortName];
-}
-
-
 - (NSString *)name {
     return _name ?: self.path.lastPathComponent;
 }
 
 
+- (NSString *)currentBranch {
+    return [[repository currentBranchWithError:NULL] shortName];
+}
+
+
+- (NSString *)statsPath {
+    NSString *path = [AppSupportPath(@"Reports") stringByAppendingPathComponent:[NSString stringWithFormat:@"%d", [self pk]]];
+    return path;
+}
+
+
+- (BOOL)statsExists {
+    BOOL isDirectory = NO;
+    BOOL exists = [[NSFileManager defaultManager] fileExistsAtPath:[self statsPath] isDirectory:&isDirectory];
+    return exists && isDirectory;
+}
+
+
+- (NSArray *)children {
+    if (_children == nil) {
+        _children = [[GSProjectInfo findByCriteria:[NSString stringWithFormat:@"WHERE parent_id = %d", [self pk]]] copy];
+    }
+    
+    return _children;
+}
+
+
 - (void)deleteObject {
+    [[NSFileManager defaultManager] removeItemAtPath:[self statsPath] error:NULL];
+    
+    if (self.isFolder) {
+        for (GSProjectInfo *project in self.children) {
+            [project deleteObject];
+        }
+    }
+    
     [super deleteObject];
 }
 
