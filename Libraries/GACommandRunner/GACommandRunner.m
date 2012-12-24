@@ -109,6 +109,10 @@
                                                     NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
                                                     [self.outputTextView appendString:str];
                                                     [outputReadHandle readInBackgroundAndNotify];
+                                                    
+#if DEBUG
+                                                    NSLog(@"%@", str);
+#endif
                                                 } 
                                             }];
     

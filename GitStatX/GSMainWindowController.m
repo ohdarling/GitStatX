@@ -97,6 +97,17 @@
 }
 
 
+- (GSProjectInfo *)selectedProject {
+    NSInteger selectedRow = [projectsOutlineView selectedRow];
+    GSProjectInfo *project = nil;
+    if (selectedRow != -1) {
+        project = [projectsOutlineView itemAtRow:selectedRow];
+    }
+    
+    return project;
+}
+
+
 #pragma mark - Actions
 
 - (void)addProjectClicked:(id)sender {
@@ -259,6 +270,20 @@
 }
 
 
+- (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(GSProjectInfo *)item {
+    if (!item.isFolder) {
+        if ([item statsExists]) {
+            [_webView setMainFrameURL:[item statsIndexURL]];
+            
+        } else if ([item needsGenerateStats]) {
+            [item generateStats];
+        }
+    }
+    
+    return YES;
+}
+
+
 #pragma mark - NSOpenSavePanelDelegate
 
 - (BOOL)panel:(id)sender shouldEnableURL:(NSURL *)url {
@@ -313,6 +338,11 @@
 
 
 - (void)windowDidBecomeMain:(NSNotification *)notification {
+    [projectsOutlineView setNeedsDisplay:YES];
+}
+
+
+- (void)windowDidResignMain:(NSNotification *)notification {
     [projectsOutlineView setNeedsDisplay:YES];
 }
 

@@ -8,9 +8,20 @@
 
 #import "GSProjectInfo.h"
 
+#import "GACommandRunner.h"
+
 @implementation GSProjectInfo
 
 @synthesize repository;
+
+static NSMutableDictionary *commandRunners = nil;
+
++ (void)initialize {
+    if (self == [GSProjectInfo class]) {
+        commandRunners = [NSMutableDictionary new];
+    }
+}
+
 
 - (void)dealloc {
     [super dealloc];
@@ -29,6 +40,59 @@
 }
 
 
+#pragma mark - Generate Stats
+
+- (GACommandRunner *)commandRunner {
+    return [commandRunners objectForKey:[NSNumber numberWithInt:self.pk]];
+}
+
+
+- (void)generateStats {
+    if ([self isGeneratingStats]) {
+        return;
+    }
+    
+    NSString *commit = [[repository headReferenceWithError:NULL] target];
+    
+    if ([self commandRunner] == nil) {
+        GACommandRunner *runner = [[GACommandRunner alloc] init];
+        [[NSFileManager defaultManager] createDirectoryAtPath:[self statsPath] withIntermediateDirectories:YES attributes:nil error:NULL];
+        runner.workDirectory = [self statsPath];
+        runner.commandPath = @"python";
+        runner.environment = @{
+        @"GNUPLOT": [[NSBundle mainBundle] pathForResource:@"gnuplot" ofType:@"" inDirectory:@"gnuplot"]
+        };
+        runner.arguments = [NSArray arrayWithObjects:
+                            [[NSBundle mainBundle] pathForResource:@"gitstats" ofType:@"" inDirectory:@"gitstats"],
+                            self.path,
+                            self.statsPath,
+                            nil];
+        [commandRunners setObject:runner forKey:[NSNumber numberWithInt:self.pk]];
+        
+        runner.terminationHandler = ^(NSTask *task) {
+            self.lastGeneratedCommit = commit;
+            self.isGeneratingStats = NO;
+            [self save];
+        };
+    }
+    
+    [[self commandRunner] run];
+    self.isGeneratingStats = YES;
+}
+
+
+- (BOOL)needsGenerateStats {
+    return ![[[repository headReferenceWithError:NULL] target] isEqualToString:self.lastGeneratedCommit];
+}
+
+
+- (BOOL)isGeneratingStats {
+    return [[self commandRunner] isTaskRunning];
+}
+
+
+#pragma mark - Properties
+
 - (void)setPath:(NSString *)path {
     _path = [path copy];
     
@@ -43,6 +107,11 @@
 
 - (NSString *)currentBranch {
     return [[repository currentBranchWithError:NULL] shortName];
+}
+
+
+- (NSString *)statsIndexURL {
+    return [[NSURL fileURLWithPath:[[self statsPath] stringByAppendingPathComponent:@"index.html"]] absoluteString];
 }
 
 
@@ -81,6 +150,8 @@
     _children = nil;
 }
 
+
+#pragma mark - Override
 
 - (void)deleteObject {
     [[NSFileManager defaultManager] removeItemAtPath:[self statsPath] error:NULL];
