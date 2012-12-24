@@ -130,6 +130,7 @@
             }
             
             [project save];
+            [project generateStats];
             
             [self reloadData];
         }

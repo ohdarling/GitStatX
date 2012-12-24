@@ -13,7 +13,11 @@
 @interface GSProjectInfoCellView : NSTableCellView {
     IBOutlet    NSTextField         *pathField;
     IBOutlet    NSTextField         *branchField;
+    IBOutlet    NSProgressIndicator *progressIndicator;
+    IBOutlet    NSButton            *generateButton;
 }
+
+- (IBAction)generateButtonClicked:(id)sender;
 
 @property (nonatomic, strong)   GSProjectInfo   *project;
 

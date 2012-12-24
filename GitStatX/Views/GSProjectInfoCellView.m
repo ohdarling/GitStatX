@@ -11,7 +11,9 @@
 @implementation GSProjectInfoCellView
 
 - (void)setProject:(GSProjectInfo *)project {
+    [_project removeObserver:self forKeyPath:@"isGeneratingStats"];
     _project = project;
+    [_project addObserver:self forKeyPath:@"isGeneratingStats" options:NSKeyValueObservingOptionNew context:NULL];
     
     self.textField.stringValue = project.name ?: @"";
     
@@ -30,6 +32,32 @@
     
     [self.textField sizeToFit];
     [branchField sizeToFit];
+    
+    [self observeValueForKeyPath:@"isGeneratingStats" ofObject:nil change:nil context:NULL];
+}
+
+
+- (void)generateButtonClicked:(id)sender {
+    [self.project generateStats];
+}
+
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"isGeneratingStats"]) {
+        if (self.project.isGeneratingStats) {
+            [progressIndicator startAnimation:nil];
+            [generateButton setHidden:YES];
+        } else {
+            [progressIndicator stopAnimation:nil];
+            [generateButton setHidden:NO];
+        }
+    }
+}
+
+
+- (void)dealloc {
+    [_project removeObserver:self forKeyPath:@"isGeneratingStats"];
+    [super dealloc];
 }
 
 @end
