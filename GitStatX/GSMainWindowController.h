@@ -11,6 +11,8 @@
 @interface GSMainWindowController : NSWindowController <NSSplitViewDelegate, NSOutlineViewDataSource, NSOutlineViewDelegate, NSOpenSavePanelDelegate, NSWindowDelegate> {
     IBOutlet    WebView             *_webView;
     IBOutlet    NSOutlineView       *projectsOutlineView;
+    
+    NSMutableDictionary             *runnersMap;
 }
 
 - (IBAction)addProjectClicked:(id)sender;

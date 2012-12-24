@@ -31,12 +31,14 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
+    runnersMap = [NSMutableDictionary new];
+    
     [self reloadData];
 }
 
 
 - (void)reloadData {
-    NSArray *projects = [GSProjectInfo allObjects];
+    NSArray *projects = [GSProjectInfo findByCriteria:@"ORDER BY list_order ASC"];
     NSMutableDictionary *map = [NSMutableDictionary new];
     
     for (GSProjectInfo *project in projects) {
@@ -81,10 +83,24 @@
 }
 
 
+- (GSProjectInfo *)nearestFolderOfClickedProject {
+    GSProjectInfo *parentProject = [self clickedProject];
+    if (!parentProject.isFolder) {
+        if (parentProject.parentId > 0) {
+            parentProject = (GSProjectInfo *)[GSProjectInfo findByPK:parentProject.parentId];
+        } else {
+            parentProject = nil;
+        }
+    }
+    
+    return parentProject;
+}
+
+
 #pragma mark - Actions
 
 - (void)addProjectClicked:(id)sender {
-    GSProjectInfo *clickedProject = [self clickedProject];
+    GSProjectInfo *parentProject = [self nearestFolderOfClickedProject];
     
     NSOpenPanel *panel = [NSOpenPanel openPanel];
     panel.canChooseDirectories = YES;
@@ -96,10 +112,10 @@
             GSProjectInfo *project = [GSProjectInfo new];
             project.path = [panel.URL path];
             
-            if (clickedProject != nil && clickedProject.isFolder) {
-                project.parentId = clickedProject.pk;
-                clickedProject.expanded = YES;
-                [clickedProject save];
+            if (parentProject != nil) {
+                [parentProject addChild:project];
+            } else {
+                project.listOrder = [self.projects.lastObject listOrder]+1;
             }
             
             [project save];
@@ -116,16 +132,16 @@
 
 
 - (void)addFolderClicked:(id)sender {
-    GSProjectInfo *clickedProject = [self clickedProject];
+    GSProjectInfo *parentProject = [self nearestFolderOfClickedProject];
     
     GSProjectInfo *project = [GSProjectInfo new];
     project.isFolder = YES;
     project.path = @"Hello";
     
-    if (clickedProject && clickedProject.isFolder) {
-        project.parentId = clickedProject.pk;
-        clickedProject.expanded = YES;
-        [clickedProject save];
+    if (parentProject != nil) {
+        [parentProject addChild:project];
+    } else {
+        project.listOrder = [self.projects.lastObject listOrder]+1;
     }
     
     [project save];

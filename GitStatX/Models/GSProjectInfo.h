@@ -19,6 +19,8 @@
 - (BOOL)statsExists;
 
 - (NSArray *)children;
+- (void)addChild:(GSProjectInfo *)child;
+- (void)clearChildrenCache;
 
 @property (nonatomic, readonly) GTRepository    *repository;
 @property (nonatomic, strong)   NSString        *name;
