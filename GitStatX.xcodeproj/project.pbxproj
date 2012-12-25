@@ -372,6 +372,7 @@
 				89075F451670F536001A318D /* Sources */,
 				89075F461670F536001A318D /* Frameworks */,
 				89075F471670F536001A318D /* Resources */,
+				89A6B4DE16898A2600884DF7 /* Update Build Number */,
 			);
 			buildRules = (
 			);
@@ -468,6 +469,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		89A6B4DE16898A2600884DF7 /* Update Build Number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Update Build Number";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n# 自动生成Build Number\n\nexport PATH=$PATH:/opt/local/bin\nGIT_COMMIT_COUNT=`git rev-list HEAD | wc -l | sed -e 's/ *//g' | xargs -n1 printf %d`\nINFO_PLIST=$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/Contents/Info.plist\n\n# 更新Build Number\n/usr/libexec/PlistBuddy \"$INFO_PLIST\" -c \"Set CFBundleVersion $GIT_COMMIT_COUNT\"\n\n# convert back to binary format\nplutil -convert binary1 \"$INFO_PLIST\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		89075F451670F536001A318D /* Sources */ = {
