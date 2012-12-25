@@ -138,10 +138,35 @@
 }
 
 
+- (GSProjectInfo *)addProject:(NSString *)pathOrName isFolder:(BOOL)isFolder afterProject:(GSProjectInfo *)proj {
+    GSProjectInfo *project = [GSProjectInfo new];
+    project.path = isFolder ? nil : pathOrName;
+    project.name = isFolder ? pathOrName : nil;
+    
+    GSProjectInfo *parentProject = proj.isFolder ? proj : proj.parentProject;
+    if (parentProject != nil) {
+        [parentProject addChild:project];
+    } else {
+        project.listOrder = [self.projects.lastObject listOrder] + 1;
+    }
+    
+    if (proj != nil && !proj.isFolder) {
+        project.listOrder = proj.listOrder + 1;
+    }
+    
+    [project save];
+    [project generateStats];
+    
+    [self reloadData];
+    
+    return project;
+}
+
+
 #pragma mark - Actions
 
 - (void)addProjectClicked:(id)sender {
-    GSProjectInfo *parentProject = [self nearestFolderOfClickedProject];
+    GSProjectInfo *clickedProject = [self clickedProject];
     
     NSOpenPanel *panel = [NSOpenPanel openPanel];
     panel.canChooseDirectories = YES;
@@ -150,19 +175,7 @@
     panel.delegate = self;
     [panel beginSheetModalForWindow:self.window completionHandler:^(NSInteger result) {
         if (result == NSFileHandlingPanelOKButton) {
-            GSProjectInfo *project = [GSProjectInfo new];
-            project.path = [panel.URL path];
-            
-            if (parentProject != nil) {
-                [parentProject addChild:project];
-            } else {
-                project.listOrder = [self.projects.lastObject listOrder]+1;
-            }
-            
-            [project save];
-            [project generateStats];
-            
-            [self reloadData];
+            [self addProject:panel.URL.path isFolder:NO afterProject:clickedProject];
         }
     }];
 }
@@ -174,20 +187,8 @@
 
 
 - (void)addFolderClicked:(id)sender {
-    GSProjectInfo *parentProject = [self nearestFolderOfClickedProject];
-    
-    GSProjectInfo *project = [GSProjectInfo new];
-    project.isFolder = YES;
-    project.path = @"Hello";
-    
-    if (parentProject != nil) {
-        [parentProject addChild:project];
-    } else {
-        project.listOrder = [self.projects.lastObject listOrder]+1;
-    }
-    
-    [project save];
-    [self reloadData];
+    GSProjectInfo *clickedProject = [self clickedProject];
+    [self addProject:@"Hello" isFolder:YES afterProject:clickedProject];
 }
 
 
@@ -345,6 +346,18 @@
         [self reloadData];
     }
     
+    
+    // Draggin from Finder
+    if ([[info draggingPasteboard] availableTypeFromArray:@[NSFilenamesPboardType]] != nil) {
+        NSArray *files = [[info draggingPasteboard] propertyListForType:NSFilenamesPboardType];
+        GSProjectInfo *afterProj = afterProject;
+        for (NSString *file in files) {
+            if ([self repositoryURLForURL:[NSURL fileURLWithPath:file]]) {
+                afterProj = [self addProject:file isFolder:NO afterProject:afterProj];
+            }
+        }
+    }
+    
     if ([selectedNodes count] > 0) {
         NSMutableIndexSet *newNodesIdx = [NSMutableIndexSet indexSet];
         for (id obj in selectedNodes) {
@@ -376,12 +389,6 @@
             }
             item = item.parentProject;
         }
-    }
-    
-    
-    // Draggin from Finder
-    if ([[info draggingPasteboard] availableTypeFromArray:@[NSFilenamesPboardType]] != nil) {
-        
     }
     
     return result;
