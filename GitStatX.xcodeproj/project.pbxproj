@@ -51,6 +51,9 @@
 		89A6B4FC1689FD1600884DF7 /* project_python_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B4F91689FD1600884DF7 /* project_python_small.png */; };
 		89A6B4FD1689FD1600884DF7 /* project_python_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B4FA1689FD1600884DF7 /* project_python_small@2x.png */; };
 		89A6B4FE1689FD1600884DF7 /* project_python.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B4FB1689FD1600884DF7 /* project_python.png */; };
+		89A6B5021689FFB200884DF7 /* project_node.js_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B4FF1689FFB200884DF7 /* project_node.js_small.png */; };
+		89A6B5031689FFB200884DF7 /* project_node.js_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B5001689FFB200884DF7 /* project_node.js_small@2x.png */; };
+		89A6B5041689FFB200884DF7 /* project_node.js.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B5011689FFB200884DF7 /* project_node.js.png */; };
 		89B140991682F94500253CE1 /* GSProjectInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B140981682F94500253CE1 /* GSProjectInfo.m */; };
 		89B140B71685731000253CE1 /* ObjectiveGit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89FDB5D71675D48D003BFE02 /* ObjectiveGit.framework */; };
 		89B140BB16857A9500253CE1 /* GSProjectInfoCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B140BA16857A9500253CE1 /* GSProjectInfoCellView.m */; };
@@ -159,6 +162,9 @@
 		89A6B4F91689FD1600884DF7 /* project_python_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = project_python_small.png; sourceTree = "<group>"; };
 		89A6B4FA1689FD1600884DF7 /* project_python_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "project_python_small@2x.png"; sourceTree = "<group>"; };
 		89A6B4FB1689FD1600884DF7 /* project_python.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = project_python.png; sourceTree = "<group>"; };
+		89A6B4FF1689FFB200884DF7 /* project_node.js_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = project_node.js_small.png; sourceTree = "<group>"; };
+		89A6B5001689FFB200884DF7 /* project_node.js_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "project_node.js_small@2x.png"; sourceTree = "<group>"; };
+		89A6B5011689FFB200884DF7 /* project_node.js.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = project_node.js.png; sourceTree = "<group>"; };
 		89B140971682F94500253CE1 /* GSProjectInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSProjectInfo.h; sourceTree = "<group>"; };
 		89B140981682F94500253CE1 /* GSProjectInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSProjectInfo.m; sourceTree = "<group>"; };
 		89B140B916857A9500253CE1 /* GSProjectInfoCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSProjectInfoCellView.h; sourceTree = "<group>"; };
@@ -323,6 +329,9 @@
 		89B140AB16847B3500253CE1 /* ProjectTypes */ = {
 			isa = PBXGroup;
 			children = (
+				89A6B4FF1689FFB200884DF7 /* project_node.js_small.png */,
+				89A6B5001689FFB200884DF7 /* project_node.js_small@2x.png */,
+				89A6B5011689FFB200884DF7 /* project_node.js.png */,
 				89A6B4F91689FD1600884DF7 /* project_python_small.png */,
 				89A6B4FA1689FD1600884DF7 /* project_python_small@2x.png */,
 				89A6B4FB1689FD1600884DF7 /* project_python.png */,
@@ -477,6 +486,9 @@
 				89A6B4FC1689FD1600884DF7 /* project_python_small.png in Resources */,
 				89A6B4FD1689FD1600884DF7 /* project_python_small@2x.png in Resources */,
 				89A6B4FE1689FD1600884DF7 /* project_python.png in Resources */,
+				89A6B5021689FFB200884DF7 /* project_node.js_small.png in Resources */,
+				89A6B5031689FFB200884DF7 /* project_node.js_small@2x.png in Resources */,
+				89A6B5041689FFB200884DF7 /* project_node.js.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
