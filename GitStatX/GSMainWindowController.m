@@ -12,6 +12,9 @@
 
 #import "GSProjectInfoCellView.h"
 
+#define GSPROJECT_PBORAD_TYPE   @"GitStatXProjectPboardType"
+
+
 @interface GSMainWindowController ()
 
 @end
@@ -35,6 +38,9 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statsGeneratedNotification:) name:GSStatsGeneratedNotification object:nil];
     
+    [projectsOutlineView registerForDraggedTypes:[NSArray arrayWithObjects:GSPROJECT_PBORAD_TYPE, nil]];
+    [projectsOutlineView setDraggingSourceOperationMask:NSDragOperationEvery forLocal:YES];
+    
     [self reloadData];
 }
 
@@ -50,6 +56,7 @@
     
     for (GSProjectInfo *project in projects) {
         [map setObject:project forKey:[NSNumber numberWithInt:project.pk]];
+        [project clearChildrenCache];
     }
     
     for (GSProjectInfo *project in projects) {
@@ -63,9 +70,13 @@
         }
     }
     
-    self.projects = [[map allValues] sortedArrayUsingComparator:^NSComparisonResult(GSProjectInfo *obj1, GSProjectInfo *obj2) {
-        return obj1.listOrder - obj2.listOrder;
-    }];
+    self.projects = [GSProjectInfo findByCriteria:@"WHERE parent_id = 0 ORDER BY list_order ASC"];
+    int listOrder = 1;
+    for (GSProjectInfo *proj in self.projects) {
+        proj.listOrder = listOrder;
+        [proj save];
+        listOrder += 2;
+    }
     
     [projectsOutlineView reloadData];
     
@@ -305,6 +316,78 @@
     
     return YES;
 }
+
+
+- (BOOL)outlineView:(NSOutlineView *)outlineView writeItems:(NSArray *)items toPasteboard:(NSPasteboard *)pboard {
+    self.draggedProject = [items lastObject];
+    
+    [pboard declareTypes:[NSArray arrayWithObjects:GSPROJECT_PBORAD_TYPE, nil] owner:self];
+    [pboard setData:[NSData data] forType:GSPROJECT_PBORAD_TYPE];
+    
+    return YES;
+}
+
+
+- (BOOL)outlineView:(NSOutlineView *)outlineView acceptDrop:(id<NSDraggingInfo>)info item:(GSProjectInfo *)item childIndex:(NSInteger)index {
+    GSProjectInfo *afterProject = index > 0 ? (item != nil ? item.children[index-1] : self.projects[index-1]) : nil;
+    GSProjectInfo *parentProject = item != nil ? item : (afterProject != nil ? (GSProjectInfo *)[GSProjectInfo findByPK:item.pk] : nil);
+    
+    NSMutableArray *selectedNodes = [NSMutableArray array];
+    [[projectsOutlineView selectedRowIndexes] enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
+        [selectedNodes addObject:[projectsOutlineView itemAtRow:idx]];
+    }];
+    
+    if ([info draggingSource] == projectsOutlineView && [[info draggingPasteboard] availableTypeFromArray:[NSArray arrayWithObject:GSPROJECT_PBORAD_TYPE]] != nil) {
+        self.draggedProject.listOrder = afterProject != nil ? afterProject.listOrder + 1 : 0;
+        self.draggedProject.parentId = parentProject != nil ? parentProject.pk : 0;
+        [parentProject refreshChildrenListOrder];
+        
+        [self.draggedProject save];
+        self.draggedProject = nil;
+        
+        [self reloadData];
+    }
+    
+    if ([selectedNodes count] > 0) {
+        NSMutableIndexSet *newNodesIdx = [NSMutableIndexSet indexSet];
+        for (id obj in selectedNodes) {
+            [newNodesIdx addIndex:[projectsOutlineView rowForItem:obj]];
+        }
+        [projectsOutlineView selectRowIndexes:newNodesIdx byExtendingSelection:NO];
+    }
+    
+    return YES;
+}
+
+
+- (NSDragOperation)outlineView:(NSOutlineView *)outlineView validateDrop:(id<NSDraggingInfo>)info proposedItem:(GSProjectInfo *)item proposedChildIndex:(NSInteger)index {
+    NSDragOperation result = NSDragOperationGeneric;
+    
+    if (item || index != NSOutlineViewDropOnItemIndex) {
+        GSProjectInfo *proj = item ?: [projectsOutlineView itemAtRow:index];
+        if (index == NSOutlineViewDropOnItemIndex && !proj.isFolder) {
+            result = NSDragOperationNone;
+        }
+    }
+    
+    if ([info draggingSource] == self && [[info draggingPasteboard] availableTypeFromArray:[NSArray arrayWithObject:GSPROJECT_PBORAD_TYPE]] != nil) {
+        while (item) {
+            if (self.draggedProject == item) {
+                result = NSDragOperationNone;
+                break;
+            }
+            item = (GSProjectInfo *)[GSProjectInfo findByPK:item.parentId];
+        }
+    }
+    
+    return result;
+}
+
+
+- (NSArray *)outlineView:(NSOutlineView *)outlineView namesOfPromisedFilesDroppedAtDestination:(NSURL *)dropDestination forDraggedItems:(NSArray *)items {
+    return nil;
+}
+
 
 
 #pragma mark - NSOpenSavePanelDelegate

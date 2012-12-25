@@ -22,6 +22,7 @@
 - (NSArray *)children;
 - (void)addChild:(GSProjectInfo *)child;
 - (void)clearChildrenCache;
+- (void)refreshChildrenListOrder;
 
 - (void)generateStats;
 - (BOOL)needsGenerateStats;

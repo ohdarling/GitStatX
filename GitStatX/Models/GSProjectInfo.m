@@ -146,6 +146,16 @@ static NSMutableDictionary *commandRunners = nil;
 }
 
 
+- (void)refreshChildrenListOrder {
+    int order = 1;
+    for (GSProjectInfo *proj in self.children) {
+        proj.listOrder = order;
+        [proj save];
+        order += 2;
+    }
+}
+
+
 - (void)addChild:(GSProjectInfo *)project {
     project.parentId = self.pk;
     project.listOrder = [self.children.lastObject listOrder] + 1;

@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class GSProjectInfo;
+
 @interface GSMainWindowController : NSWindowController <NSSplitViewDelegate, NSOutlineViewDataSource, NSOutlineViewDelegate, NSOpenSavePanelDelegate, NSWindowDelegate> {
     IBOutlet    WebView             *_webView;
     IBOutlet    NSOutlineView       *projectsOutlineView;
@@ -25,5 +27,6 @@
 - (IBAction)setProjectType:(id)sender;
 
 @property (nonatomic, strong)   NSArray     *projects;
+@property (nonatomic, strong)   GSProjectInfo   *draggedProject;
 
 @end
