@@ -12,3 +12,5 @@
 
 
 #define AppSupportPath(path)     [[[NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:[[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleNameKey]] stringByAppendingPathComponent:path]
+
+#define GSStatsGeneratedNotification    @"GSStatsGeneratedNotification"

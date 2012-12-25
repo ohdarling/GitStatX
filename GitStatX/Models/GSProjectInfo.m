@@ -64,6 +64,8 @@ static NSMutableDictionary *commandRunners = nil;
         };
         runner.arguments = [NSArray arrayWithObjects:
                             [[NSBundle mainBundle] pathForResource:@"gitstats" ofType:@"" inDirectory:@"gitstats"],
+                            @"-c",
+                            @"style=bootstrap.css",
                             self.path,
                             self.statsPath,
                             nil];
@@ -73,6 +75,8 @@ static NSMutableDictionary *commandRunners = nil;
             self.lastGeneratedCommit = commit;
             self.isGeneratingStats = NO;
             [self save];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:GSStatsGeneratedNotification object:self];
         };
     }
     

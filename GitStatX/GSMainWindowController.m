@@ -33,11 +33,18 @@
     
     runnersMap = [NSMutableDictionary new];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statsGeneratedNotification:) name:GSStatsGeneratedNotification object:nil];
+    
     [self reloadData];
 }
 
 
 - (void)reloadData {
+    NSMutableArray *selectedItems = [NSMutableArray new];
+    [[projectsOutlineView selectedRowIndexes] enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
+        [selectedItems addObject:[projectsOutlineView itemAtRow:idx]];
+    }];
+    
     NSArray *projects = [GSProjectInfo findByCriteria:@"ORDER BY list_order ASC"];
     NSMutableDictionary *map = [NSMutableDictionary new];
     
@@ -67,6 +74,21 @@
             [projectsOutlineView expandItem:project];
         }
     }
+    
+    if (selectedItems.count > 0) {
+        NSMutableIndexSet *idxset = [NSMutableIndexSet new];
+        for (id obj in selectedItems) {
+            [idxset addIndex:[projectsOutlineView rowForItem:obj]];
+        }
+        [projectsOutlineView selectRowIndexes:idxset byExtendingSelection:NO];
+    }
+}
+
+
+#pragma mark - Notifications
+
+- (void)statsGeneratedNotification:(NSNotification *)note {
+    [_webView reload:nil];
 }
 
 
