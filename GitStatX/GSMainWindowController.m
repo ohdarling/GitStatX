@@ -307,7 +307,6 @@
 
 
 - (BOOL)outlineView:(NSOutlineView *)outlineView shouldExpandItem:(GSProjectInfo *)item {
-    NSLog(@"item %d %@", item.pk, item);
     item.expanded = YES;
     [item save];
     return YES;
