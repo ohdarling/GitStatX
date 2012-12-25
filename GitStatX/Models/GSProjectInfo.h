@@ -23,6 +23,7 @@
 - (void)addChild:(GSProjectInfo *)child;
 - (void)clearChildrenCache;
 - (void)refreshChildrenListOrder;
+- (GSProjectInfo *)parentProject;
 
 - (void)generateStats;
 - (BOOL)needsGenerateStats;

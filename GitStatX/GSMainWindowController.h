@@ -10,7 +10,7 @@
 
 @class GSProjectInfo;
 
-@interface GSMainWindowController : NSWindowController <NSSplitViewDelegate, NSOutlineViewDataSource, NSOutlineViewDelegate, NSOpenSavePanelDelegate, NSWindowDelegate> {
+@interface GSMainWindowController : NSWindowController <NSSplitViewDelegate, NSOutlineViewDataSource, NSOutlineViewDelegate, NSOpenSavePanelDelegate, NSWindowDelegate, NSDraggingDestination> {
     IBOutlet    WebView             *_webView;
     IBOutlet    NSOutlineView       *projectsOutlineView;
     

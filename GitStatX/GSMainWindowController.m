@@ -38,8 +38,9 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statsGeneratedNotification:) name:GSStatsGeneratedNotification object:nil];
     
-    [projectsOutlineView registerForDraggedTypes:[NSArray arrayWithObjects:GSPROJECT_PBORAD_TYPE, nil]];
+    [projectsOutlineView registerForDraggedTypes:@[GSPROJECT_PBORAD_TYPE, NSFilenamesPboardType]];
     [projectsOutlineView setDraggingSourceOperationMask:NSDragOperationEvery forLocal:YES];
+    [projectsOutlineView setDraggingSourceOperationMask:NSDragOperationEvery forLocal:NO];
     
     [self reloadData];
 }
@@ -51,7 +52,7 @@
         [selectedItems addObject:[projectsOutlineView itemAtRow:idx]];
     }];
     
-    NSArray *projects = [GSProjectInfo findByCriteria:@"ORDER BY list_order ASC"];
+    NSArray *projects = [GSProjectInfo allObjects];
     NSMutableDictionary *map = [NSMutableDictionary new];
     
     for (GSProjectInfo *project in projects) {
@@ -61,7 +62,7 @@
     
     for (GSProjectInfo *project in projects) {
         if (project.parentId > 0) {
-            if ([GSProjectInfo findByPK:project.parentId] != nil) {
+            if (project.parentProject != nil) {
                 [map removeObjectForKey:[NSNumber numberWithInt:project.pk]];
             } else {
                 project.parentId = 0;
@@ -119,11 +120,7 @@
 - (GSProjectInfo *)nearestFolderOfClickedProject {
     GSProjectInfo *parentProject = [self clickedProject];
     if (!parentProject.isFolder) {
-        if (parentProject.parentId > 0) {
-            parentProject = (GSProjectInfo *)[GSProjectInfo findByPK:parentProject.parentId];
-        } else {
-            parentProject = nil;
-        }
+        parentProject = parentProject.parentProject;
     }
     
     return parentProject;
@@ -321,7 +318,7 @@
 - (BOOL)outlineView:(NSOutlineView *)outlineView writeItems:(NSArray *)items toPasteboard:(NSPasteboard *)pboard {
     self.draggedProject = [items lastObject];
     
-    [pboard declareTypes:[NSArray arrayWithObjects:GSPROJECT_PBORAD_TYPE, nil] owner:self];
+    [pboard declareTypes:@[GSPROJECT_PBORAD_TYPE] owner:self];
     [pboard setData:[NSData data] forType:GSPROJECT_PBORAD_TYPE];
     
     return YES;
@@ -337,7 +334,7 @@
         [selectedNodes addObject:[projectsOutlineView itemAtRow:idx]];
     }];
     
-    if ([info draggingSource] == projectsOutlineView && [[info draggingPasteboard] availableTypeFromArray:[NSArray arrayWithObject:GSPROJECT_PBORAD_TYPE]] != nil) {
+    if ([info draggingSource] == projectsOutlineView && [[info draggingPasteboard] availableTypeFromArray:@[GSPROJECT_PBORAD_TYPE]] != nil) {
         self.draggedProject.listOrder = afterProject != nil ? afterProject.listOrder + 1 : 0;
         self.draggedProject.parentId = parentProject != nil ? parentProject.pk : 0;
         [parentProject refreshChildrenListOrder];
@@ -370,14 +367,21 @@
         }
     }
     
-    if ([info draggingSource] == self && [[info draggingPasteboard] availableTypeFromArray:[NSArray arrayWithObject:GSPROJECT_PBORAD_TYPE]] != nil) {
+    // Dragging from GitStatX
+    if ([info draggingSource] == projectsOutlineView && [[info draggingPasteboard] availableTypeFromArray:@[GSPROJECT_PBORAD_TYPE]] != nil) {
         while (item) {
-            if (self.draggedProject == item) {
+            if (self.draggedProject == item || [self.draggedProject.children indexOfObject:item] != NSNotFound) {
                 result = NSDragOperationNone;
                 break;
             }
-            item = (GSProjectInfo *)[GSProjectInfo findByPK:item.parentId];
+            item = item.parentProject;
         }
+    }
+    
+    
+    // Draggin from Finder
+    if ([[info draggingPasteboard] availableTypeFromArray:@[NSFilenamesPboardType]] != nil) {
+        
     }
     
     return result;
@@ -387,7 +391,6 @@
 - (NSArray *)outlineView:(NSOutlineView *)outlineView namesOfPromisedFilesDroppedAtDestination:(NSURL *)dropDestination forDraggedItems:(NSArray *)items {
     return nil;
 }
-
 
 
 #pragma mark - NSOpenSavePanelDelegate

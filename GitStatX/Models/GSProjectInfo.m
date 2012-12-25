@@ -165,6 +165,11 @@ static NSMutableDictionary *commandRunners = nil;
 }
 
 
+- (GSProjectInfo *)parentProject {
+    return self.parentId > 0 ? [GSProjectInfo findByPK:self.parentId] : nil;
+}
+
+
 #pragma mark - Override
 
 - (void)deleteObject {
