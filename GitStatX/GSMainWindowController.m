@@ -83,6 +83,12 @@
     
     for (GSProjectInfo *project in projects) {
         if (project.expanded) {
+            // Confirm parent items are expanded
+            GSProjectInfo *proj = project.parentProject;
+            while (proj && ![projectsOutlineView isItemExpanded:proj]) {
+                [projectsOutlineView expandItem:proj];
+            }
+            
             [projectsOutlineView expandItem:project];
         }
     }
@@ -301,6 +307,7 @@
 
 
 - (BOOL)outlineView:(NSOutlineView *)outlineView shouldExpandItem:(GSProjectInfo *)item {
+    NSLog(@"item %d %@", item.pk, item);
     item.expanded = YES;
     [item save];
     return YES;
