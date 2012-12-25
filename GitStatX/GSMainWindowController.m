@@ -212,11 +212,12 @@
 - (void)deleteProject:(id)sender {
     GSProjectInfo *project = [self clickedProject];
     if (project != nil) {
+        NSString *desc = [project descriptionWithIndent:@""];
         NSInteger result = [[NSAlert alertWithMessageText:@"Delete Project"
                                             defaultButton:@"Remove Project Stats"
                                           alternateButton:@"Cancel"
                                               otherButton:nil
-                                informativeTextWithFormat:@"It will remove stats of the project %@, NOTHING in repository will be deleted.", project.name] runModal];
+                                informativeTextWithFormat:@"These folders or stats of the projects will be removed:\n\n%@\n\nDon't worry, NOTHING in repository will be deleted.", desc] runModal];
         
         if (result == NSAlertDefaultReturn) {
             [project deleteObject];

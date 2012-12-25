@@ -25,6 +25,8 @@
 - (void)refreshChildrenListOrder;
 - (GSProjectInfo *)parentProject;
 
+- (NSString *)descriptionWithIndent:(NSString *)indent;
+
 - (void)generateStats;
 - (BOOL)needsGenerateStats;
 

@@ -40,6 +40,21 @@ static NSMutableDictionary *commandRunners = nil;
 }
 
 
+- (NSString *)descriptionWithIndent:(NSString *)indent {
+    NSMutableArray *lines = [NSMutableArray new];
+    [lines addObject:[NSString stringWithFormat:@"%@%@", self.isFolder ? @"📂 " : @"", self.name]];
+    if (self.isFolder) {
+        for (GSProjectInfo *proj in self.children) {
+            [lines addObject:[NSString stringWithFormat:@"%@%@",
+                              indent,
+                              [proj descriptionWithIndent:[indent stringByAppendingString:@"\t"]]]];
+        }
+    }
+    
+    return [lines componentsJoinedByString:@"\n"];
+}
+
+
 #pragma mark - Generate Stats
 
 - (GACommandRunner *)commandRunner {
