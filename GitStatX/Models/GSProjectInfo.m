@@ -100,7 +100,11 @@ static NSMutableDictionary *commandRunners = nil;
 - (void)setPath:(NSString *)path {
     _path = [path copy];
     
-    repository = [[GTRepository alloc] initWithURL:[NSURL fileURLWithPath:path] error:NULL];
+    if (path && !self.isFolder) {
+        repository = [[GTRepository alloc] initWithURL:[NSURL fileURLWithPath:path] error:NULL];
+    } else {
+        repository = nil;
+    }
 }
 
 
@@ -166,7 +170,7 @@ static NSMutableDictionary *commandRunners = nil;
 
 
 - (GSProjectInfo *)parentProject {
-    return self.parentId > 0 ? [GSProjectInfo findByPK:self.parentId] : nil;
+    return self.parentId > 0 ? (GSProjectInfo *)[GSProjectInfo findByPK:self.parentId] : nil;
 }
 
 

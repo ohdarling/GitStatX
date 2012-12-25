@@ -140,6 +140,7 @@
 
 - (GSProjectInfo *)addProject:(NSString *)pathOrName isFolder:(BOOL)isFolder afterProject:(GSProjectInfo *)proj {
     GSProjectInfo *project = [GSProjectInfo new];
+    project.isFolder = isFolder;
     project.path = isFolder ? nil : pathOrName;
     project.name = isFolder ? pathOrName : nil;
     
@@ -155,7 +156,10 @@
     }
     
     [project save];
-    [project generateStats];
+    
+    if (!project.isFolder) {
+        [project generateStats];
+    }
     
     [self reloadData];
     
