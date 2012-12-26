@@ -198,7 +198,11 @@
 
 - (void)addFolderClicked:(id)sender {
     GSProjectInfo *clickedProject = [self clickedProject];
-    [self addProject:@"Hello" isFolder:YES afterProject:clickedProject];
+    GSProjectInfo *newFolder = [self addProject:@"New Folder" isFolder:YES afterProject:clickedProject];
+    GSProjectInfoCellView *cellView = [projectsOutlineView viewAtColumn:0
+                                                                    row:[projectsOutlineView rowForItem:newFolder]
+                                                        makeIfNecessary:YES];
+    [cellView setEditing:YES];
 }
 
 
@@ -211,7 +215,13 @@
 
 
 - (void)renameProject:(id)sender {
-    
+    GSProjectInfo *clickedProject = [self clickedProject];
+    if (clickedProject) {
+        GSProjectInfoCellView *cellView = [projectsOutlineView viewAtColumn:0
+                                                                        row:[projectsOutlineView rowForItem:clickedProject]
+                                                            makeIfNecessary:YES];
+        [cellView setEditing:YES];
+    }
 }
 
 
@@ -279,16 +289,8 @@
 
 
 - (NSView *)outlineView:(NSOutlineView *)outlineView viewForTableColumn:(NSTableColumn *)tableColumn item:(GSProjectInfo *)item {
-    NSTableCellView *view = nil;
-    
-    if (item.isFolder) {
-        view = [outlineView makeViewWithIdentifier:@"HeaderCell" owner:nil];
-        view.textField.stringValue = item.name;
-        
-    } else {
-        view = [outlineView makeViewWithIdentifier:@"DataCell" owner:nil];
-        [(GSProjectInfoCellView *)view setProject:item];
-    }
+    GSProjectCellView *view = [outlineView makeViewWithIdentifier:item.isFolder ? @"HeaderCell" : @"DataCell" owner:nil];
+    view.project = item;
     
     return view;
 }
@@ -422,6 +424,28 @@
 - (BOOL)panel:(NSOpenPanel *)sender validateURL:(NSURL *)url error:(NSError **)outError {
     if (!([self repositoryURLForURL:url])) {
         return NO;
+    }
+    
+    return YES;
+}
+
+
+#pragma mark - Menu delegate
+
+- (BOOL)validateMenuItem:(NSMenuItem *)menuItem {
+    GSProjectInfo *clickedProject = [self clickedProject];
+    BOOL isFolder = clickedProject.isFolder;
+    switch (menuItem.tag) {
+        case 1:
+            return (!isFolder && clickedProject != nil);
+            break;
+            
+        case 2:
+            return clickedProject != nil;
+            break;
+            
+        default:
+            break;
     }
     
     return YES;

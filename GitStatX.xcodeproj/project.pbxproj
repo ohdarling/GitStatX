@@ -54,9 +54,12 @@
 		89A6B5021689FFB200884DF7 /* project_node.js_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B4FF1689FFB200884DF7 /* project_node.js_small.png */; };
 		89A6B5031689FFB200884DF7 /* project_node.js_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B5001689FFB200884DF7 /* project_node.js_small@2x.png */; };
 		89A6B5041689FFB200884DF7 /* project_node.js.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B5011689FFB200884DF7 /* project_node.js.png */; };
+		89A6B509168AE60A00884DF7 /* GSPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A6B507168AE60A00884DF7 /* GSPreferencesWindowController.m */; };
+		89A6B50A168AE60A00884DF7 /* GSPreferencesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B508168AE60A00884DF7 /* GSPreferencesWindowController.xib */; };
 		89B140991682F94500253CE1 /* GSProjectInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B140981682F94500253CE1 /* GSProjectInfo.m */; };
 		89B140B71685731000253CE1 /* ObjectiveGit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89FDB5D71675D48D003BFE02 /* ObjectiveGit.framework */; };
 		89B140BB16857A9500253CE1 /* GSProjectInfoCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B140BA16857A9500253CE1 /* GSProjectInfoCellView.m */; };
+		89BD0819168AF0F200B671A1 /* GSProjectCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BD0818168AF0F200B671A1 /* GSProjectCellView.m */; };
 		89FDA25016724E26003BFE02 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89FDA24F16724E26003BFE02 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -165,10 +168,15 @@
 		89A6B4FF1689FFB200884DF7 /* project_node.js_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = project_node.js_small.png; sourceTree = "<group>"; };
 		89A6B5001689FFB200884DF7 /* project_node.js_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "project_node.js_small@2x.png"; sourceTree = "<group>"; };
 		89A6B5011689FFB200884DF7 /* project_node.js.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = project_node.js.png; sourceTree = "<group>"; };
+		89A6B506168AE60A00884DF7 /* GSPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSPreferencesWindowController.h; sourceTree = "<group>"; };
+		89A6B507168AE60A00884DF7 /* GSPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSPreferencesWindowController.m; sourceTree = "<group>"; };
+		89A6B508168AE60A00884DF7 /* GSPreferencesWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GSPreferencesWindowController.xib; sourceTree = "<group>"; };
 		89B140971682F94500253CE1 /* GSProjectInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSProjectInfo.h; sourceTree = "<group>"; };
 		89B140981682F94500253CE1 /* GSProjectInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSProjectInfo.m; sourceTree = "<group>"; };
 		89B140B916857A9500253CE1 /* GSProjectInfoCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSProjectInfoCellView.h; sourceTree = "<group>"; };
 		89B140BA16857A9500253CE1 /* GSProjectInfoCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSProjectInfoCellView.m; sourceTree = "<group>"; };
+		89BD0817168AF0F200B671A1 /* GSProjectCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSProjectCellView.h; sourceTree = "<group>"; };
+		89BD0818168AF0F200B671A1 /* GSProjectCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSProjectCellView.m; sourceTree = "<group>"; };
 		89FDA24F16724E26003BFE02 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		89FDB5C31675D48C003BFE02 /* ObjectiveGitFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ObjectiveGitFramework.xcodeproj; path = "objective-git/ObjectiveGitFramework.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -231,6 +239,7 @@
 		89075F531670F536001A318D /* GitStatX */ = {
 			isa = PBXGroup;
 			children = (
+				89A6B505168AE5E900884DF7 /* Controllers */,
 				89B140B816857A7B00253CE1 /* Views */,
 				89B140961682F92100253CE1 /* Models */,
 				89075F541670F536001A318D /* Supporting Files */,
@@ -317,6 +326,16 @@
 			name = sqlitepersistentobjects;
 			sourceTree = "<group>";
 		};
+		89A6B505168AE5E900884DF7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				89A6B506168AE60A00884DF7 /* GSPreferencesWindowController.h */,
+				89A6B507168AE60A00884DF7 /* GSPreferencesWindowController.m */,
+				89A6B508168AE60A00884DF7 /* GSPreferencesWindowController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		89B140961682F92100253CE1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -356,6 +375,8 @@
 			children = (
 				89B140B916857A9500253CE1 /* GSProjectInfoCellView.h */,
 				89B140BA16857A9500253CE1 /* GSProjectInfoCellView.m */,
+				89BD0817168AF0F200B671A1 /* GSProjectCellView.h */,
+				89BD0818168AF0F200B671A1 /* GSProjectCellView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -489,6 +510,7 @@
 				89A6B5021689FFB200884DF7 /* project_node.js_small.png in Resources */,
 				89A6B5031689FFB200884DF7 /* project_node.js_small@2x.png in Resources */,
 				89A6B5041689FFB200884DF7 /* project_node.js.png in Resources */,
+				89A6B50A168AE60A00884DF7 /* GSPreferencesWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,6 +561,8 @@
 				8936AD541681B11700EB60D5 /* UIImage-SQLitePersistence.m in Sources */,
 				89B140991682F94500253CE1 /* GSProjectInfo.m in Sources */,
 				89B140BB16857A9500253CE1 /* GSProjectInfoCellView.m in Sources */,
+				89A6B509168AE60A00884DF7 /* GSPreferencesWindowController.m in Sources */,
+				89BD0819168AF0F200B671A1 /* GSProjectCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

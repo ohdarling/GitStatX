@@ -125,7 +125,7 @@ static NSMutableDictionary *commandRunners = nil;
 
 
 - (NSString *)name {
-    return _name ?: self.path.lastPathComponent;
+    return _name ?: self.path.lastPathComponent ?: @"";
 }
 
 

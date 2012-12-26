@@ -10,7 +10,9 @@
 
 #import "GSProjectInfo.h"
 
-@interface GSProjectInfoCellView : NSTableCellView {
+#import "GSProjectCellView.h"
+
+@interface GSProjectInfoCellView : GSProjectCellView {
     IBOutlet    NSTextField         *pathField;
     IBOutlet    NSTextField         *branchField;
     IBOutlet    NSProgressIndicator *progressIndicator;
@@ -18,7 +20,5 @@
 }
 
 - (IBAction)generateButtonClicked:(id)sender;
-
-@property (nonatomic, strong)   GSProjectInfo   *project;
 
 @end
