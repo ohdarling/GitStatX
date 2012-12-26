@@ -191,11 +191,6 @@
 }
 
 
-- (void)removeProjectClicked:(id)sender {
-    
-}
-
-
 - (void)addFolderClicked:(id)sender {
     GSProjectInfo *clickedProject = [self clickedProject];
     GSProjectInfo *newFolder = [self addProject:@"New Folder" isFolder:YES afterProject:clickedProject];
@@ -437,11 +432,11 @@
     BOOL isFolder = clickedProject.isFolder;
     switch (menuItem.tag) {
         case 1:
-            return (!isFolder && clickedProject != nil);
+            return clickedProject != nil;
             break;
             
         case 2:
-            return clickedProject != nil;
+            return (!isFolder && clickedProject != nil);
             break;
             
         default:
@@ -449,6 +444,13 @@
     }
     
     return YES;
+}
+
+
+- (void)menuNeedsUpdate:(NSMenu *)menu {
+    for (NSMenuItem *item in menu.itemArray) {
+        [item setEnabled:[self validateMenuItem:item]];
+    }
 }
 
 
