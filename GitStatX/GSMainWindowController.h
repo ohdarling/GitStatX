@@ -21,7 +21,7 @@
 
 - (IBAction)addFolderClicked:(id)sender;
 
-- (IBAction)showReportInBrowser:(id)sender;
+- (IBAction)exportReport:(id)sender;
 - (IBAction)showInFinder:(id)sender;
 - (IBAction)renameProject:(id)sender;
 - (IBAction)deleteProject:(id)sender;

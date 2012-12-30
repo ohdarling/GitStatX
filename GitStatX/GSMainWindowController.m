@@ -202,9 +202,17 @@
 }
 
 
-- (void)showReportInBrowser:(id)sender {
-    NSURL *url = [NSURL fileURLWithPath:[[self clickedProject] statsIndexURL]];
-    [[NSWorkspace sharedWorkspace] openURL:url];
+- (void)exportReport:(id)sender {
+    GSProjectInfo *clickedProject = [self clickedProject];
+    if (clickedProject != nil) {
+        NSSavePanel *panel = [NSSavePanel savePanel];
+        panel.title = [NSString stringWithFormat:@"Export statistic of %@", clickedProject.name];
+        [panel setNameFieldStringValue:[NSString stringWithFormat:@"GitStatX - %@", clickedProject.name]];
+        if ([panel runModal] == NSFileHandlingPanelOKButton) {
+            [[NSFileManager defaultManager] removeItemAtURL:panel.URL error:NULL];
+            [[NSFileManager defaultManager] copyItemAtPath:[clickedProject statsPath] toPath:[panel.URL path] error:NULL];
+        }
+    }
 }
 
 
