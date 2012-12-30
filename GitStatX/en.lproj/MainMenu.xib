@@ -1530,7 +1530,6 @@
 															<int key="NSvFlags">256</int>
 															<string key="NSFrameSize">{210, 500}</string>
 															<reference key="NSSuperview" ref="277586966"/>
-															<reference key="NSWindow"/>
 															<reference key="NSNextKeyView" ref="1011118429"/>
 															<string key="NSReuseIdentifierKey">_NS:13</string>
 															<bool key="NSEnabled">YES</bool>
@@ -1642,7 +1641,6 @@
 													</array>
 													<string key="NSFrameSize">{210, 500}</string>
 													<reference key="NSSuperview" ref="1056653673"/>
-													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView" ref="415828465"/>
 													<string key="NSReuseIdentifierKey">_NS:11</string>
 													<reference key="NSDocView" ref="415828465"/>
@@ -1654,7 +1652,6 @@
 													<int key="NSvFlags">-2147483392</int>
 													<string key="NSFrame">{{224, 17}, {15, 102}}</string>
 													<reference key="NSSuperview" ref="1056653673"/>
-													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView" ref="779465810"/>
 													<string key="NSReuseIdentifierKey">_NS:15</string>
 													<reference key="NSTarget" ref="1056653673"/>
@@ -1666,7 +1663,6 @@
 													<int key="NSvFlags">-2147483392</int>
 													<string key="NSFrame">{{1, 119}, {238, 15}}</string>
 													<reference key="NSSuperview" ref="1056653673"/>
-													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView" ref="921283482"/>
 													<string key="NSReuseIdentifierKey">_NS:60</string>
 													<int key="NSsFlags">1</int>
@@ -1677,7 +1673,6 @@
 											</array>
 											<string key="NSFrameSize">{210, 500}</string>
 											<reference key="NSSuperview" ref="316145919"/>
-											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="277586966"/>
 											<string key="NSReuseIdentifierKey">_NS:9</string>
 											<int key="NSsFlags">133680</int>
@@ -1689,7 +1684,6 @@
 									</array>
 									<string key="NSFrameSize">{210, 500}</string>
 									<reference key="NSSuperview" ref="222512751"/>
-									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="1056653673"/>
 									<string key="NSReuseIdentifierKey">_NS:11</string>
 									<string key="NSClassName">NSView</string>
@@ -1720,7 +1714,6 @@
 											</set>
 											<string key="NSFrameSize">{380, 500}</string>
 											<reference key="NSSuperview" ref="921283482"/>
-											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView"/>
 											<string key="NSReuseIdentifierKey">_NS:9</string>
 											<string key="FrameName"/>
@@ -1744,7 +1737,6 @@
 									</array>
 									<string key="NSFrame">{{220, 0}, {380, 500}}</string>
 									<reference key="NSSuperview" ref="222512751"/>
-									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="29482937"/>
 									<string key="NSReuseIdentifierKey">_NS:13</string>
 									<string key="NSClassName">NSView</string>
@@ -1752,7 +1744,6 @@
 							</array>
 							<string key="NSFrameSize">{600, 500}</string>
 							<reference key="NSSuperview" ref="439893737"/>
-							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="316145919"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSIsVertical">YES</bool>
@@ -1762,7 +1753,6 @@
 					</array>
 					<string key="NSFrameSize">{600, 500}</string>
 					<reference key="NSSuperview"/>
-					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="222512751"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
@@ -1783,6 +1773,15 @@
 			<object class="NSMenu" id="376821863">
 				<string key="NSTitle"/>
 				<array class="NSMutableArray" key="NSMenuItems">
+					<object class="NSMenuItem" id="26107192">
+						<reference key="NSMenu" ref="376821863"/>
+						<string key="NSTitle">Show Report in Browser</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+						<int key="NSTag">2</int>
+					</object>
 					<object class="NSMenuItem" id="128127597">
 						<reference key="NSMenu" ref="376821863"/>
 						<string key="NSTitle">Show in Finder</string>
@@ -1901,7 +1900,7 @@
 									<string key="NSTitle">Python</string>
 									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
-									<object class="NSCustomResource" key="NSImage" id="876460531">
+									<object class="NSCustomResource" key="NSImage">
 										<string key="NSClassName">NSImage</string>
 										<string key="NSResourceName">project_python_small</string>
 									</object>
@@ -1913,7 +1912,10 @@
 									<string key="NSTitle">Node.js</string>
 									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSImage" ref="876460531"/>
+									<object class="NSCustomResource" key="NSImage">
+										<string key="NSClassName">NSImage</string>
+										<string key="NSResourceName">project_node.js_small</string>
+									</object>
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
 								</object>
@@ -3031,6 +3033,14 @@
 						<reference key="destination" ref="157818678"/>
 					</object>
 					<int key="connectionID">997</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">showReportInBrowser:</string>
+						<reference key="source" ref="742499861"/>
+						<reference key="destination" ref="26107192"/>
+					</object>
+					<int key="connectionID">999</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -4773,6 +4783,7 @@
 							<reference ref="295096890"/>
 							<reference ref="128127597"/>
 							<reference ref="883808062"/>
+							<reference ref="26107192"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -5194,6 +5205,11 @@
 						<reference key="object" ref="317235088"/>
 						<reference key="parent" ref="376821863"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">998</int>
+						<reference key="object" ref="26107192"/>
+						<reference key="parent" ref="376821863"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -5520,156 +5536,15 @@
 				<string key="971.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="987.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="996.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="998.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">997</int>
+			<int key="maxID">999</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes">
-			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
-				<object class="IBPartialClassDescription">
-					<string key="className">GSAppDelegate</string>
-					<string key="superclassName">NSObject</string>
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">mainWindowController</string>
-						<string key="NS.object.0">GSMainWindowController</string>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">mainWindowController</string>
-						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">mainWindowController</string>
-							<string key="candidateClassName">GSMainWindowController</string>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/GSAppDelegate.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">GSMainWindowController</string>
-					<string key="superclassName">NSWindowController</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="addFolderClicked:">id</string>
-						<string key="addProjectClicked:">id</string>
-						<string key="deleteProject:">id</string>
-						<string key="renameProject:">id</string>
-						<string key="setProjectType:">id</string>
-						<string key="showInFinder:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="addFolderClicked:">
-							<string key="name">addFolderClicked:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="addProjectClicked:">
-							<string key="name">addProjectClicked:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="deleteProject:">
-							<string key="name">deleteProject:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="renameProject:">
-							<string key="name">renameProject:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="setProjectType:">
-							<string key="name">setProjectType:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="showInFinder:">
-							<string key="name">showInFinder:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="_webView">WebView</string>
-						<string key="projectTypeMenuItem">NSMenuItem</string>
-						<string key="projectsOutlineView">NSOutlineView</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="_webView">
-							<string key="name">_webView</string>
-							<string key="candidateClassName">WebView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="projectTypeMenuItem">
-							<string key="name">projectTypeMenuItem</string>
-							<string key="candidateClassName">NSMenuItem</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="projectsOutlineView">
-							<string key="name">projectsOutlineView</string>
-							<string key="candidateClassName">NSOutlineView</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/GSMainWindowController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">GSProjectCellView</string>
-					<string key="superclassName">NSTableCellView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/GSProjectCellView.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">GSProjectInfoCellView</string>
-					<string key="superclassName">GSProjectCellView</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">generateButtonClicked:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">generateButtonClicked:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">generateButtonClicked:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="branchField">NSTextField</string>
-						<string key="generateButton">NSButton</string>
-						<string key="pathField">NSTextField</string>
-						<string key="progressIndicator">NSProgressIndicator</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="branchField">
-							<string key="name">branchField</string>
-							<string key="candidateClassName">NSTextField</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="generateButton">
-							<string key="name">generateButton</string>
-							<string key="candidateClassName">NSButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="pathField">
-							<string key="name">pathField</string>
-							<string key="candidateClassName">NSTextField</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="progressIndicator">
-							<string key="name">progressIndicator</string>
-							<string key="candidateClassName">NSProgressIndicator</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/GSProjectInfoCellView.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">NSLayoutConstraint</string>
-					<string key="superclassName">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/NSLayoutConstraint.h</string>
-					</object>
-				</object>
-			</array>
-		</object>
+		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
@@ -5685,6 +5560,7 @@
 			<string key="NSToolbarShowFonts">{32, 32}</string>
 			<string key="project_default">{61.442050068402345, 61.442050068402345}</string>
 			<string key="project_default_small">{3.8401281292751466, 3.8401281292751466}</string>
+			<string key="project_node.js_small">{16, 16}</string>
 			<string key="project_php_small">{16, 16}</string>
 			<string key="project_python_small">{16, 16}</string>
 			<string key="project_rubyonrails_small">{3.8401281292751466, 3.8401281292751466}</string>

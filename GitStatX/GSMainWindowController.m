@@ -201,6 +201,12 @@
 }
 
 
+- (void)showReportInBrowser:(id)sender {
+    NSURL *url = [NSURL fileURLWithPath:[[self clickedProject] statsIndexURL]];
+    [[NSWorkspace sharedWorkspace] openURL:url];
+}
+
+
 - (void)showInFinder:(id)sender {
     if ([self clickedProject]) {
         [[NSWorkspace sharedWorkspace] selectFile:[self clickedProject].path

@@ -177,6 +177,7 @@
 		89B140BA16857A9500253CE1 /* GSProjectInfoCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSProjectInfoCellView.m; sourceTree = "<group>"; };
 		89BD0817168AF0F200B671A1 /* GSProjectCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSProjectCellView.h; sourceTree = "<group>"; };
 		89BD0818168AF0F200B671A1 /* GSProjectCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSProjectCellView.m; sourceTree = "<group>"; };
+		89BD08FF16904B0400B671A1 /* GitStatX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = GitStatX.entitlements; sourceTree = "<group>"; };
 		89FDA24F16724E26003BFE02 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		89FDB5C31675D48C003BFE02 /* ObjectiveGitFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ObjectiveGitFramework.xcodeproj; path = "objective-git/ObjectiveGitFramework.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -239,6 +240,7 @@
 		89075F531670F536001A318D /* GitStatX */ = {
 			isa = PBXGroup;
 			children = (
+				89BD08FF16904B0400B671A1 /* GitStatX.entitlements */,
 				89A6B505168AE5E900884DF7 /* Controllers */,
 				89B140B816857A7B00253CE1 /* Views */,
 				89B140961682F92100253CE1 /* Models */,
@@ -658,11 +660,14 @@
 		89075F681670F536001A318D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = GitStatX/GitStatX.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GitStatX/GitStatX-Prefix.pch";
 				INFOPLIST_FILE = "GitStatX/GitStatX-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -670,11 +675,14 @@
 		89075F691670F536001A318D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = GitStatX/GitStatX.entitlements;
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GitStatX/GitStatX-Prefix.pch";
 				INFOPLIST_FILE = "GitStatX/GitStatX-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
