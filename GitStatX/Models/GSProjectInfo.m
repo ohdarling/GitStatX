@@ -24,6 +24,9 @@ static NSMutableDictionary *commandRunners = nil;
 
 
 - (void)dealloc {
+    repository = nil;
+    self.pathBookmarkData = nil;
+    
     [super dealloc];
 }
 
@@ -115,11 +118,25 @@ static NSMutableDictionary *commandRunners = nil;
 
 - (void)setPath:(NSString *)path {
     _path = [path copy];
-    
-    if (path && !self.isFolder) {
-        repository = [[GTRepository alloc] initWithURL:[NSURL fileURLWithPath:path] error:NULL];
-    } else {
-        repository = nil;
+}
+
+
+- (void)setPathBookmarkData:(NSData *)pathBookmarkData {
+    if (_pathBookmarkData != pathBookmarkData) {
+        _pathBookmarkData = [pathBookmarkData copy];
+        
+        [bookmarkURL stopAccessingSecurityScopedResource];
+        BOOL isStale = NO;
+        if (pathBookmarkData != nil) {
+            bookmarkURL = [[NSURL URLByResolvingBookmarkData:pathBookmarkData options:NSURLBookmarkResolutionWithSecurityScope relativeToURL:nil bookmarkDataIsStale:&isStale error:NULL] copy];
+            [bookmarkURL startAccessingSecurityScopedResource];
+            
+            if (bookmarkURL && !self.isFolder) {
+                repository = [[GTRepository alloc] initWithURL:bookmarkURL error:NULL];
+            } else {
+                repository = nil;
+            }
+        }
     }
 }
 

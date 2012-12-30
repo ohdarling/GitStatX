@@ -149,6 +149,7 @@
     project.isFolder = isFolder;
     project.path = isFolder ? nil : pathOrName;
     project.name = isFolder ? pathOrName : nil;
+    project.pathBookmarkData = !isFolder ? [[NSURL fileURLWithPath:pathOrName] bookmarkDataWithOptions:NSURLBookmarkCreationWithSecurityScope includingResourceValuesForKeys:nil relativeToURL:nil error:NULL] : nil;
     
     GSProjectInfo *parentProject = proj.isFolder ? proj : proj.parentProject;
     if (parentProject != nil) {

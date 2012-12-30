@@ -12,6 +12,7 @@
     GTRepository            *repository;
     
     __strong NSArray        *_children;
+    __strong NSURL          *bookmarkURL;
 }
 
 - (NSString *)currentBranch;
@@ -40,5 +41,6 @@
 @property (nonatomic, assign)   BOOL            expanded;
 @property (nonatomic, assign)   BOOL            isGeneratingStats;
 @property (nonatomic, strong)   NSString        *lastGeneratedCommit;
+@property (nonatomic, strong)   NSData          *pathBookmarkData;
 
 @end

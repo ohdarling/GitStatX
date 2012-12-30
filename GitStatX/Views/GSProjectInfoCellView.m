@@ -24,6 +24,7 @@
     if (project.repository) {
         pathField.stringValue = project.path ?: @"";
         branchField.stringValue = project.currentBranch ?: @"";
+        pathField.textColor = branchField.textColor;
     } else {
         pathField.stringValue = @"Invalid Git Repository";
         pathField.textColor = [NSColor redColor];
