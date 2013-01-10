@@ -114,9 +114,12 @@
 
 - (GSProjectInfo *)clickedProject {
     NSInteger clickedRow = [projectsOutlineView clickedRow];
+    NSInteger selectedRow = [projectsOutlineView selectedRow];
     GSProjectInfo *project = nil;
     if (clickedRow != -1) {
         project = [projectsOutlineView itemAtRow:clickedRow];
+    } else if (selectedRow != -1) {
+        project = [projectsOutlineView itemAtRow:selectedRow];
     }
     
     return project;
