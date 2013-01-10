@@ -43,6 +43,8 @@
     [projectsOutlineView setDraggingSourceOperationMask:NSDragOperationEvery forLocal:NO];
     
     [self reloadData];
+    
+    [self regenerateAllReports:nil];
 }
 
 
@@ -267,6 +269,43 @@
 }
 
 
+- (void)regenerateAllReports:(id)sender {
+    NSArray *projects = [GSProjectInfo allObjects];
+    dispatch_queue_t queue = dispatch_queue_create("regenerate-all-reports", DISPATCH_QUEUE_CONCURRENT);
+    for (GSProjectInfo *project in projects) {
+        if (!project.isFolder && [project needsGenerateStats]) {
+            dispatch_async(queue, ^{
+                [project generateStats];
+            });
+        }
+    }
+    dispatch_release(queue);
+}
+
+
+- (void)regenerateReport:(id)sender {
+    GSProjectInfo *project = [self clickedProject];
+    if (project != nil && !project.isGeneratingStats) {
+        [project generateStats];
+    }
+}
+
+
+- (void)gotoReportTab:(id)sender {
+    NSInteger tag = 0;
+    GSProjectInfo *project = [self clickedProject];
+    if (project != nil && [sender isKindOfClass:[NSMenuItem class]]) {
+        tag = [sender tag];
+        NSArray *pages = @[@"index.html", @"activity.html", @"authors.html", @"files.html", @"lines.html", @"tags.html"];
+        if (tag > 0 && tag <= pages.count) {
+            tag = tag-1;
+            NSURL *url = [NSURL fileURLWithPath:[project.statsPath stringByAppendingPathComponent:pages[tag]]];
+            [_webView setMainFrameURL:[url absoluteString]];
+        }
+    }
+}
+
+
 #pragma mark - SplitView delegate
 
 - (CGFloat)splitView:(NSSplitView *)splitView constrainMinCoordinate:(CGFloat)proposedMinimumPosition ofSubviewAt:(NSInteger)dividerIndex {
@@ -459,17 +498,26 @@
 - (BOOL)validateMenuItem:(NSMenuItem *)menuItem {
     GSProjectInfo *clickedProject = [self clickedProject];
     BOOL isFolder = clickedProject.isFolder;
-    switch (menuItem.tag) {
-        case 1:
-            return clickedProject != nil;
-            break;
-            
-        case 2:
-            return (!isFolder && clickedProject != nil);
-            break;
-            
-        default:
-            break;
+    
+    if (menuItem.menu == projectsContextMenu) {
+        switch (menuItem.tag) {
+            case 1:
+                return clickedProject != nil;
+                break;
+                
+            case 2:
+                return (!isFolder && clickedProject != nil);
+                break;
+                
+            default:
+                break;
+        }
+        
+    } else if (menuItem.action == @selector(gotoReportTab:)) {
+        return clickedProject != nil && !isFolder;
+        
+    } else if (menuItem.action == @selector(regenerateReport:)) {
+        return clickedProject != nil && !clickedProject.isGeneratingStats;
     }
     
     return YES;

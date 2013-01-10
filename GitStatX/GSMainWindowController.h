@@ -15,6 +15,7 @@
     IBOutlet    NSOutlineView       *projectsOutlineView;
     
     NSMutableDictionary             *runnersMap;
+    NSMenu                          *projectsContextMenu;
 }
 
 - (IBAction)addProjectClicked:(id)sender;
@@ -26,6 +27,10 @@
 - (IBAction)renameProject:(id)sender;
 - (IBAction)deleteProject:(id)sender;
 - (IBAction)setProjectType:(id)sender;
+
+- (IBAction)regenerateAllReports:(id)sender;
+- (IBAction)regenerateReport:(id)sender;
+- (IBAction)gotoReportTab:(id)sender;
 
 @property (nonatomic, strong)   NSArray     *projects;
 @property (nonatomic, strong)   GSProjectInfo   *draggedProject;
