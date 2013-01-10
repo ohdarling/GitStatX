@@ -39,6 +39,7 @@
 		898983D4169E77BA005BC900 /* add_folder_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 898983D2169E77BA005BC900 /* add_folder_button.png */; };
 		898983D5169E77BA005BC900 /* add_repository_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 898983D3169E77BA005BC900 /* add_repository_button.png */; };
 		898983D7169E7CAB005BC900 /* export_report_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 898983D6169E7CAB005BC900 /* export_report_button.png */; };
+		89898418169F09C8005BC900 /* ObjectiveGit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 89FDB5D71675D48D003BFE02 /* ObjectiveGit.framework */; };
 		89A6B46F1686012D00884DF7 /* project_default_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B4631686012D00884DF7 /* project_default_small.png */; };
 		89A6B4701686012D00884DF7 /* project_default_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B4641686012D00884DF7 /* project_default_small@2x.png */; };
 		89A6B4711686012D00884DF7 /* project_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B4651686012D00884DF7 /* project_default.png */; };
@@ -97,6 +98,19 @@
 			remoteInfo = ObjectiveGit;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		89898417169F09BC005BC900 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				89898418169F09C8005BC900 /* ObjectiveGit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		89075F491670F536001A318D /* GitStatX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitStatX.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -424,6 +438,7 @@
 			buildPhases = (
 				89075F451670F536001A318D /* Sources */,
 				89075F461670F536001A318D /* Frameworks */,
+				89898417169F09BC005BC900 /* CopyFiles */,
 				89075F471670F536001A318D /* Resources */,
 				89A6B4DE16898A2600884DF7 /* Update Build Number */,
 			);
@@ -682,6 +697,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GitStatX/GitStatX-Prefix.pch";
 				INFOPLIST_FILE = "GitStatX/GitStatX-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@execuable_path";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -692,11 +708,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = GitStatX/GitStatX.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				CODE_SIGN_IDENTITY = "Developer ID Application: Jiwei Xu";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GitStatX/GitStatX-Prefix.pch";
 				INFOPLIST_FILE = "GitStatX/GitStatX-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@execuable_path";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
