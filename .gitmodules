@@ -1,3 +1,9 @@
 [submodule "Libraries/objective-git"]
 	path = Libraries/objective-git
 	url = https://github.com/libgit2/objective-git.git
+[submodule "Libraries/sqlitepersistentobjects"]
+	path = Libraries/sqlitepersistentobjects
+	url=https://github.com/ohdarling/SQLitePersistentObjects.git
+[submodule "GitStatX/Resources/gitstats"]
+	path = GitStatX/Resources/gitstats
+	url = https://github.com/ohdarling/gitstats.git

@@ -4,4 +4,13 @@
 
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
+    #import <WebKit/WebKit.h>
+    #import "SQLiteInstanceManager.h"
+    #import "SQLitePersistentObject.h"
+    #import <ObjectiveGit/ObjectiveGit.h>
 #endif
+
+
+#define AppSupportPath(path)     [[[NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:[[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleNameKey]] stringByAppendingPathComponent:path]
+
+#define GSStatsGeneratedNotification    @"GSStatsGeneratedNotification"

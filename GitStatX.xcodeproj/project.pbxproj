@@ -16,8 +16,87 @@
 		89075F7016722D9F001A318D /* Icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 89075F6F16722D9F001A318D /* Icon.iconset */; };
 		89075F7216722E06001A318D /* gnuplot in Resources */ = {isa = PBXBuildFile; fileRef = 89075F7116722E06001A318D /* gnuplot */; };
 		89075F7416722E22001A318D /* gitstats in Resources */ = {isa = PBXBuildFile; fileRef = 89075F7316722E22001A318D /* gitstats */; };
+		8936ACEB167F76FF00EB60D5 /* GAAutoscrollTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8936ACE8167F76FF00EB60D5 /* GAAutoscrollTextView.m */; };
+		8936ACEC167F76FF00EB60D5 /* GACommandRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = 8936ACEA167F76FF00EB60D5 /* GACommandRunner.m */; };
+		8936AD451681B11700EB60D5 /* NSData-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 8936AD261681B11700EB60D5 /* NSData-SQLitePersistence.m */; };
+		8936AD461681B11700EB60D5 /* NSDate-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 8936AD281681B11700EB60D5 /* NSDate-SQLitePersistence.m */; };
+		8936AD471681B11700EB60D5 /* NSMutableArray-MultipleSort.m in Sources */ = {isa = PBXBuildFile; fileRef = 8936AD2A1681B11700EB60D5 /* NSMutableArray-MultipleSort.m */; };
+		8936AD481681B11700EB60D5 /* NSMutableData-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 8936AD2C1681B11700EB60D5 /* NSMutableData-SQLitePersistence.m */; };
+		8936AD491681B11700EB60D5 /* NSNumber-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 8936AD2E1681B11700EB60D5 /* NSNumber-SQLitePersistence.m */; };
+		8936AD4A1681B11700EB60D5 /* NSObject-ClassName.m in Sources */ = {isa = PBXBuildFile; fileRef = 8936AD301681B11700EB60D5 /* NSObject-ClassName.m */; };
+		8936AD4B1681B11700EB60D5 /* NSObject-MissingKV.m in Sources */ = {isa = PBXBuildFile; fileRef = 8936AD321681B11700EB60D5 /* NSObject-MissingKV.m */; };
+		8936AD4C1681B11700EB60D5 /* NSObject-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 8936AD341681B11700EB60D5 /* NSObject-SQLitePersistence.m */; };
+		8936AD4D1681B11700EB60D5 /* NSString-NumberStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 8936AD361681B11700EB60D5 /* NSString-NumberStuff.m */; };
+		8936AD4E1681B11700EB60D5 /* NSString-SQLiteColumnName.m in Sources */ = {isa = PBXBuildFile; fileRef = 8936AD381681B11700EB60D5 /* NSString-SQLiteColumnName.m */; };
+		8936AD4F1681B11700EB60D5 /* NSString-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 8936AD3A1681B11700EB60D5 /* NSString-SQLitePersistence.m */; };
+		8936AD501681B11700EB60D5 /* NSString-UppercaseFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 8936AD3C1681B11700EB60D5 /* NSString-UppercaseFirst.m */; };
+		8936AD511681B11700EB60D5 /* SQLiteInstanceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8936AD3E1681B11700EB60D5 /* SQLiteInstanceManager.m */; };
+		8936AD521681B11700EB60D5 /* SQLitePersistentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8936AD401681B11700EB60D5 /* SQLitePersistentObject.m */; };
+		8936AD531681B11700EB60D5 /* UIColor-SQLitePersistentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8936AD421681B11700EB60D5 /* UIColor-SQLitePersistentObject.m */; };
+		8936AD541681B11700EB60D5 /* UIImage-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 8936AD441681B11700EB60D5 /* UIImage-SQLitePersistence.m */; };
+		8936AD561681B12A00EB60D5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8936AD551681B12A00EB60D5 /* libsqlite3.dylib */; };
+		8941AA02167AE240002FDB30 /* GSMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8941AA01167AE240002FDB30 /* GSMainWindowController.m */; };
+		898983D4169E77BA005BC900 /* add_folder_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 898983D2169E77BA005BC900 /* add_folder_button.png */; };
+		898983D5169E77BA005BC900 /* add_repository_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 898983D3169E77BA005BC900 /* add_repository_button.png */; };
+		898983D7169E7CAB005BC900 /* export_report_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 898983D6169E7CAB005BC900 /* export_report_button.png */; };
+		89A6B46F1686012D00884DF7 /* project_default_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B4631686012D00884DF7 /* project_default_small.png */; };
+		89A6B4701686012D00884DF7 /* project_default_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B4641686012D00884DF7 /* project_default_small@2x.png */; };
+		89A6B4711686012D00884DF7 /* project_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B4651686012D00884DF7 /* project_default.png */; };
+		89A6B4721686012D00884DF7 /* project_php_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B4661686012D00884DF7 /* project_php_small.png */; };
+		89A6B4731686012D00884DF7 /* project_php_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B4671686012D00884DF7 /* project_php_small@2x.png */; };
+		89A6B4741686012D00884DF7 /* project_php.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B4681686012D00884DF7 /* project_php.png */; };
+		89A6B4751686012D00884DF7 /* project_rubyonrails_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B4691686012D00884DF7 /* project_rubyonrails_small.png */; };
+		89A6B4761686012D00884DF7 /* project_rubyonrails_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B46A1686012D00884DF7 /* project_rubyonrails_small@2x.png */; };
+		89A6B4771686012D00884DF7 /* project_rubyonrails.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B46B1686012D00884DF7 /* project_rubyonrails.png */; };
+		89A6B4781686012D00884DF7 /* project_xcodeproject_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B46C1686012D00884DF7 /* project_xcodeproject_small.png */; };
+		89A6B4791686012D00884DF7 /* project_xcodeproject_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B46D1686012D00884DF7 /* project_xcodeproject_small@2x.png */; };
+		89A6B47A1686012D00884DF7 /* project_xcodeproject.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B46E1686012D00884DF7 /* project_xcodeproject.png */; };
+		89A6B4FC1689FD1600884DF7 /* project_python_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B4F91689FD1600884DF7 /* project_python_small.png */; };
+		89A6B4FD1689FD1600884DF7 /* project_python_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B4FA1689FD1600884DF7 /* project_python_small@2x.png */; };
+		89A6B4FE1689FD1600884DF7 /* project_python.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B4FB1689FD1600884DF7 /* project_python.png */; };
+		89A6B5021689FFB200884DF7 /* project_node.js_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B4FF1689FFB200884DF7 /* project_node.js_small.png */; };
+		89A6B5031689FFB200884DF7 /* project_node.js_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B5001689FFB200884DF7 /* project_node.js_small@2x.png */; };
+		89A6B5041689FFB200884DF7 /* project_node.js.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B5011689FFB200884DF7 /* project_node.js.png */; };
+		89A6B509168AE60A00884DF7 /* GSPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A6B507168AE60A00884DF7 /* GSPreferencesWindowController.m */; };
+		89A6B50A168AE60A00884DF7 /* GSPreferencesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B508168AE60A00884DF7 /* GSPreferencesWindowController.xib */; };
+		89B140991682F94500253CE1 /* GSProjectInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B140981682F94500253CE1 /* GSProjectInfo.m */; };
+		89B140B71685731000253CE1 /* ObjectiveGit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89FDB5D71675D48D003BFE02 /* ObjectiveGit.framework */; };
+		89B140BB16857A9500253CE1 /* GSProjectInfoCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B140BA16857A9500253CE1 /* GSProjectInfoCellView.m */; };
+		89BD0819168AF0F200B671A1 /* GSProjectCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BD0818168AF0F200B671A1 /* GSProjectCellView.m */; };
+		89BD090B16909B7C00B671A1 /* git in Resources */ = {isa = PBXBuildFile; fileRef = 89BD090A16909B7C00B671A1 /* git */; };
 		89FDA25016724E26003BFE02 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89FDA24F16724E26003BFE02 /* WebKit.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		89FDB5D61675D48D003BFE02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89FDB5C31675D48C003BFE02 /* ObjectiveGitFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = ObjectiveGit;
+		};
+		89FDB5D81675D48D003BFE02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89FDB5C31675D48C003BFE02 /* ObjectiveGitFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 04DB4645133AB57600D9C624;
+			remoteInfo = "ObjectiveGit-iOS";
+		};
+		89FDB5DA1675D48D003BFE02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89FDB5C31675D48C003BFE02 /* ObjectiveGitFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88F05A6B16011E5400B7AD1D;
+			remoteInfo = ObjectiveGitTests;
+		};
+		89FDB5E31675D499003BFE02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89FDB5C31675D48C003BFE02 /* ObjectiveGitFramework.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = ObjectiveGit;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		89075F491670F536001A318D /* GitStatX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitStatX.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,7 +115,79 @@
 		89075F6F16722D9F001A318D /* Icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = Icon.iconset; sourceTree = "<group>"; };
 		89075F7116722E06001A318D /* gnuplot */ = {isa = PBXFileReference; lastKnownFileType = folder; path = gnuplot; sourceTree = "<group>"; };
 		89075F7316722E22001A318D /* gitstats */ = {isa = PBXFileReference; lastKnownFileType = folder; path = gitstats; sourceTree = "<group>"; };
+		8936ACE7167F76FF00EB60D5 /* GAAutoscrollTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAAutoscrollTextView.h; sourceTree = "<group>"; };
+		8936ACE8167F76FF00EB60D5 /* GAAutoscrollTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAAutoscrollTextView.m; sourceTree = "<group>"; };
+		8936ACE9167F76FF00EB60D5 /* GACommandRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GACommandRunner.h; sourceTree = "<group>"; };
+		8936ACEA167F76FF00EB60D5 /* GACommandRunner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GACommandRunner.m; sourceTree = "<group>"; };
+		8936AD251681B11700EB60D5 /* NSData-SQLitePersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData-SQLitePersistence.h"; path = "sqlitepersistentobjects/src/NSData-SQLitePersistence.h"; sourceTree = "<group>"; };
+		8936AD261681B11700EB60D5 /* NSData-SQLitePersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData-SQLitePersistence.m"; path = "sqlitepersistentobjects/src/NSData-SQLitePersistence.m"; sourceTree = "<group>"; };
+		8936AD271681B11700EB60D5 /* NSDate-SQLitePersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate-SQLitePersistence.h"; path = "sqlitepersistentobjects/src/NSDate-SQLitePersistence.h"; sourceTree = "<group>"; };
+		8936AD281681B11700EB60D5 /* NSDate-SQLitePersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate-SQLitePersistence.m"; path = "sqlitepersistentobjects/src/NSDate-SQLitePersistence.m"; sourceTree = "<group>"; };
+		8936AD291681B11700EB60D5 /* NSMutableArray-MultipleSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray-MultipleSort.h"; path = "sqlitepersistentobjects/src/NSMutableArray-MultipleSort.h"; sourceTree = "<group>"; };
+		8936AD2A1681B11700EB60D5 /* NSMutableArray-MultipleSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray-MultipleSort.m"; path = "sqlitepersistentobjects/src/NSMutableArray-MultipleSort.m"; sourceTree = "<group>"; };
+		8936AD2B1681B11700EB60D5 /* NSMutableData-SQLitePersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableData-SQLitePersistence.h"; path = "sqlitepersistentobjects/src/NSMutableData-SQLitePersistence.h"; sourceTree = "<group>"; };
+		8936AD2C1681B11700EB60D5 /* NSMutableData-SQLitePersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableData-SQLitePersistence.m"; path = "sqlitepersistentobjects/src/NSMutableData-SQLitePersistence.m"; sourceTree = "<group>"; };
+		8936AD2D1681B11700EB60D5 /* NSNumber-SQLitePersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNumber-SQLitePersistence.h"; path = "sqlitepersistentobjects/src/NSNumber-SQLitePersistence.h"; sourceTree = "<group>"; };
+		8936AD2E1681B11700EB60D5 /* NSNumber-SQLitePersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSNumber-SQLitePersistence.m"; path = "sqlitepersistentobjects/src/NSNumber-SQLitePersistence.m"; sourceTree = "<group>"; };
+		8936AD2F1681B11700EB60D5 /* NSObject-ClassName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject-ClassName.h"; path = "sqlitepersistentobjects/src/NSObject-ClassName.h"; sourceTree = "<group>"; };
+		8936AD301681B11700EB60D5 /* NSObject-ClassName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject-ClassName.m"; path = "sqlitepersistentobjects/src/NSObject-ClassName.m"; sourceTree = "<group>"; };
+		8936AD311681B11700EB60D5 /* NSObject-MissingKV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject-MissingKV.h"; path = "sqlitepersistentobjects/src/NSObject-MissingKV.h"; sourceTree = "<group>"; };
+		8936AD321681B11700EB60D5 /* NSObject-MissingKV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject-MissingKV.m"; path = "sqlitepersistentobjects/src/NSObject-MissingKV.m"; sourceTree = "<group>"; };
+		8936AD331681B11700EB60D5 /* NSObject-SQLitePersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject-SQLitePersistence.h"; path = "sqlitepersistentobjects/src/NSObject-SQLitePersistence.h"; sourceTree = "<group>"; };
+		8936AD341681B11700EB60D5 /* NSObject-SQLitePersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject-SQLitePersistence.m"; path = "sqlitepersistentobjects/src/NSObject-SQLitePersistence.m"; sourceTree = "<group>"; };
+		8936AD351681B11700EB60D5 /* NSString-NumberStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString-NumberStuff.h"; path = "sqlitepersistentobjects/src/NSString-NumberStuff.h"; sourceTree = "<group>"; };
+		8936AD361681B11700EB60D5 /* NSString-NumberStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString-NumberStuff.m"; path = "sqlitepersistentobjects/src/NSString-NumberStuff.m"; sourceTree = "<group>"; };
+		8936AD371681B11700EB60D5 /* NSString-SQLiteColumnName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString-SQLiteColumnName.h"; path = "sqlitepersistentobjects/src/NSString-SQLiteColumnName.h"; sourceTree = "<group>"; };
+		8936AD381681B11700EB60D5 /* NSString-SQLiteColumnName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString-SQLiteColumnName.m"; path = "sqlitepersistentobjects/src/NSString-SQLiteColumnName.m"; sourceTree = "<group>"; };
+		8936AD391681B11700EB60D5 /* NSString-SQLitePersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString-SQLitePersistence.h"; path = "sqlitepersistentobjects/src/NSString-SQLitePersistence.h"; sourceTree = "<group>"; };
+		8936AD3A1681B11700EB60D5 /* NSString-SQLitePersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString-SQLitePersistence.m"; path = "sqlitepersistentobjects/src/NSString-SQLitePersistence.m"; sourceTree = "<group>"; };
+		8936AD3B1681B11700EB60D5 /* NSString-UppercaseFirst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString-UppercaseFirst.h"; path = "sqlitepersistentobjects/src/NSString-UppercaseFirst.h"; sourceTree = "<group>"; };
+		8936AD3C1681B11700EB60D5 /* NSString-UppercaseFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString-UppercaseFirst.m"; path = "sqlitepersistentobjects/src/NSString-UppercaseFirst.m"; sourceTree = "<group>"; };
+		8936AD3D1681B11700EB60D5 /* SQLiteInstanceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SQLiteInstanceManager.h; path = sqlitepersistentobjects/src/SQLiteInstanceManager.h; sourceTree = "<group>"; };
+		8936AD3E1681B11700EB60D5 /* SQLiteInstanceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SQLiteInstanceManager.m; path = sqlitepersistentobjects/src/SQLiteInstanceManager.m; sourceTree = "<group>"; };
+		8936AD3F1681B11700EB60D5 /* SQLitePersistentObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SQLitePersistentObject.h; path = sqlitepersistentobjects/src/SQLitePersistentObject.h; sourceTree = "<group>"; };
+		8936AD401681B11700EB60D5 /* SQLitePersistentObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SQLitePersistentObject.m; path = sqlitepersistentobjects/src/SQLitePersistentObject.m; sourceTree = "<group>"; };
+		8936AD411681B11700EB60D5 /* UIColor-SQLitePersistentObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor-SQLitePersistentObject.h"; path = "sqlitepersistentobjects/src/UIColor-SQLitePersistentObject.h"; sourceTree = "<group>"; };
+		8936AD421681B11700EB60D5 /* UIColor-SQLitePersistentObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor-SQLitePersistentObject.m"; path = "sqlitepersistentobjects/src/UIColor-SQLitePersistentObject.m"; sourceTree = "<group>"; };
+		8936AD431681B11700EB60D5 /* UIImage-SQLitePersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage-SQLitePersistence.h"; path = "sqlitepersistentobjects/src/UIImage-SQLitePersistence.h"; sourceTree = "<group>"; };
+		8936AD441681B11700EB60D5 /* UIImage-SQLitePersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage-SQLitePersistence.m"; path = "sqlitepersistentobjects/src/UIImage-SQLitePersistence.m"; sourceTree = "<group>"; };
+		8936AD551681B12A00EB60D5 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		8941AA00167AE240002FDB30 /* GSMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSMainWindowController.h; sourceTree = "<group>"; };
+		8941AA01167AE240002FDB30 /* GSMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSMainWindowController.m; sourceTree = "<group>"; };
+		898983D2169E77BA005BC900 /* add_folder_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_folder_button.png; sourceTree = "<group>"; };
+		898983D3169E77BA005BC900 /* add_repository_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_repository_button.png; sourceTree = "<group>"; };
+		898983D6169E7CAB005BC900 /* export_report_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = export_report_button.png; sourceTree = "<group>"; };
+		89A6B4631686012D00884DF7 /* project_default_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = project_default_small.png; sourceTree = "<group>"; };
+		89A6B4641686012D00884DF7 /* project_default_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "project_default_small@2x.png"; sourceTree = "<group>"; };
+		89A6B4651686012D00884DF7 /* project_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = project_default.png; sourceTree = "<group>"; };
+		89A6B4661686012D00884DF7 /* project_php_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = project_php_small.png; sourceTree = "<group>"; };
+		89A6B4671686012D00884DF7 /* project_php_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "project_php_small@2x.png"; sourceTree = "<group>"; };
+		89A6B4681686012D00884DF7 /* project_php.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = project_php.png; sourceTree = "<group>"; };
+		89A6B4691686012D00884DF7 /* project_rubyonrails_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = project_rubyonrails_small.png; sourceTree = "<group>"; };
+		89A6B46A1686012D00884DF7 /* project_rubyonrails_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "project_rubyonrails_small@2x.png"; sourceTree = "<group>"; };
+		89A6B46B1686012D00884DF7 /* project_rubyonrails.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = project_rubyonrails.png; sourceTree = "<group>"; };
+		89A6B46C1686012D00884DF7 /* project_xcodeproject_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = project_xcodeproject_small.png; sourceTree = "<group>"; };
+		89A6B46D1686012D00884DF7 /* project_xcodeproject_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "project_xcodeproject_small@2x.png"; sourceTree = "<group>"; };
+		89A6B46E1686012D00884DF7 /* project_xcodeproject.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = project_xcodeproject.png; sourceTree = "<group>"; };
+		89A6B4F91689FD1600884DF7 /* project_python_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = project_python_small.png; sourceTree = "<group>"; };
+		89A6B4FA1689FD1600884DF7 /* project_python_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "project_python_small@2x.png"; sourceTree = "<group>"; };
+		89A6B4FB1689FD1600884DF7 /* project_python.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = project_python.png; sourceTree = "<group>"; };
+		89A6B4FF1689FFB200884DF7 /* project_node.js_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = project_node.js_small.png; sourceTree = "<group>"; };
+		89A6B5001689FFB200884DF7 /* project_node.js_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "project_node.js_small@2x.png"; sourceTree = "<group>"; };
+		89A6B5011689FFB200884DF7 /* project_node.js.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = project_node.js.png; sourceTree = "<group>"; };
+		89A6B506168AE60A00884DF7 /* GSPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSPreferencesWindowController.h; sourceTree = "<group>"; };
+		89A6B507168AE60A00884DF7 /* GSPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSPreferencesWindowController.m; sourceTree = "<group>"; };
+		89A6B508168AE60A00884DF7 /* GSPreferencesWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GSPreferencesWindowController.xib; sourceTree = "<group>"; };
+		89B140971682F94500253CE1 /* GSProjectInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSProjectInfo.h; sourceTree = "<group>"; };
+		89B140981682F94500253CE1 /* GSProjectInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSProjectInfo.m; sourceTree = "<group>"; };
+		89B140B916857A9500253CE1 /* GSProjectInfoCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSProjectInfoCellView.h; sourceTree = "<group>"; };
+		89B140BA16857A9500253CE1 /* GSProjectInfoCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSProjectInfoCellView.m; sourceTree = "<group>"; };
+		89BD0817168AF0F200B671A1 /* GSProjectCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSProjectCellView.h; sourceTree = "<group>"; };
+		89BD0818168AF0F200B671A1 /* GSProjectCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSProjectCellView.m; sourceTree = "<group>"; };
+		89BD08FF16904B0400B671A1 /* GitStatX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = GitStatX.entitlements; sourceTree = "<group>"; };
+		89BD090A16909B7C00B671A1 /* git */ = {isa = PBXFileReference; lastKnownFileType = folder; path = git; sourceTree = "<group>"; };
 		89FDA24F16724E26003BFE02 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		89FDB5C31675D48C003BFE02 /* ObjectiveGitFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ObjectiveGitFramework.xcodeproj; path = "objective-git/ObjectiveGitFramework.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +195,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89B140B71685731000253CE1 /* ObjectiveGit.framework in Frameworks */,
+				8936AD561681B12A00EB60D5 /* libsqlite3.dylib in Frameworks */,
 				89FDA25016724E26003BFE02 /* WebKit.framework in Frameworks */,
 				89075F4E1670F536001A318D /* Cocoa.framework in Frameworks */,
 			);
@@ -55,6 +208,7 @@
 		89075F3E1670F536001A318D = {
 			isa = PBXGroup;
 			children = (
+				89FDA2DB1675D477003BFE02 /* Libraries */,
 				89075F531670F536001A318D /* GitStatX */,
 				89075F6A1670F54C001A318D /* Resources */,
 				89075F4C1670F536001A318D /* Frameworks */,
@@ -73,6 +227,7 @@
 		89075F4C1670F536001A318D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8936AD551681B12A00EB60D5 /* libsqlite3.dylib */,
 				89FDA24F16724E26003BFE02 /* WebKit.framework */,
 				89075F4D1670F536001A318D /* Cocoa.framework */,
 				89075F4F1670F536001A318D /* Other Frameworks */,
@@ -93,10 +248,16 @@
 		89075F531670F536001A318D /* GitStatX */ = {
 			isa = PBXGroup;
 			children = (
+				89BD08FF16904B0400B671A1 /* GitStatX.entitlements */,
+				89A6B505168AE5E900884DF7 /* Controllers */,
+				89B140B816857A7B00253CE1 /* Views */,
+				89B140961682F92100253CE1 /* Models */,
+				89075F541670F536001A318D /* Supporting Files */,
 				89075F5F1670F536001A318D /* GSAppDelegate.h */,
 				89075F601670F536001A318D /* GSAppDelegate.m */,
 				89075F621670F536001A318D /* MainMenu.xib */,
-				89075F541670F536001A318D /* Supporting Files */,
+				8941AA00167AE240002FDB30 /* GSMainWindowController.h */,
+				8941AA01167AE240002FDB30 /* GSMainWindowController.m */,
 			);
 			path = GitStatX;
 			sourceTree = "<group>";
@@ -116,12 +277,142 @@
 		89075F6A1670F54C001A318D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				898983D6169E7CAB005BC900 /* export_report_button.png */,
+				898983D2169E77BA005BC900 /* add_folder_button.png */,
+				898983D3169E77BA005BC900 /* add_repository_button.png */,
+				89B140AB16847B3500253CE1 /* ProjectTypes */,
+				89BD090A16909B7C00B671A1 /* git */,
 				89075F7316722E22001A318D /* gitstats */,
 				89075F7116722E06001A318D /* gnuplot */,
 				89075F6F16722D9F001A318D /* Icon.iconset */,
 			);
 			name = Resources;
 			path = GitStatX/Resources;
+			sourceTree = "<group>";
+		};
+		8936ACE6167F76FF00EB60D5 /* GACommandRunner */ = {
+			isa = PBXGroup;
+			children = (
+				8936ACE7167F76FF00EB60D5 /* GAAutoscrollTextView.h */,
+				8936ACE8167F76FF00EB60D5 /* GAAutoscrollTextView.m */,
+				8936ACE9167F76FF00EB60D5 /* GACommandRunner.h */,
+				8936ACEA167F76FF00EB60D5 /* GACommandRunner.m */,
+			);
+			path = GACommandRunner;
+			sourceTree = "<group>";
+		};
+		8936AD241681B10900EB60D5 /* sqlitepersistentobjects */ = {
+			isa = PBXGroup;
+			children = (
+				8936AD251681B11700EB60D5 /* NSData-SQLitePersistence.h */,
+				8936AD261681B11700EB60D5 /* NSData-SQLitePersistence.m */,
+				8936AD271681B11700EB60D5 /* NSDate-SQLitePersistence.h */,
+				8936AD281681B11700EB60D5 /* NSDate-SQLitePersistence.m */,
+				8936AD291681B11700EB60D5 /* NSMutableArray-MultipleSort.h */,
+				8936AD2A1681B11700EB60D5 /* NSMutableArray-MultipleSort.m */,
+				8936AD2B1681B11700EB60D5 /* NSMutableData-SQLitePersistence.h */,
+				8936AD2C1681B11700EB60D5 /* NSMutableData-SQLitePersistence.m */,
+				8936AD2D1681B11700EB60D5 /* NSNumber-SQLitePersistence.h */,
+				8936AD2E1681B11700EB60D5 /* NSNumber-SQLitePersistence.m */,
+				8936AD2F1681B11700EB60D5 /* NSObject-ClassName.h */,
+				8936AD301681B11700EB60D5 /* NSObject-ClassName.m */,
+				8936AD311681B11700EB60D5 /* NSObject-MissingKV.h */,
+				8936AD321681B11700EB60D5 /* NSObject-MissingKV.m */,
+				8936AD331681B11700EB60D5 /* NSObject-SQLitePersistence.h */,
+				8936AD341681B11700EB60D5 /* NSObject-SQLitePersistence.m */,
+				8936AD351681B11700EB60D5 /* NSString-NumberStuff.h */,
+				8936AD361681B11700EB60D5 /* NSString-NumberStuff.m */,
+				8936AD371681B11700EB60D5 /* NSString-SQLiteColumnName.h */,
+				8936AD381681B11700EB60D5 /* NSString-SQLiteColumnName.m */,
+				8936AD391681B11700EB60D5 /* NSString-SQLitePersistence.h */,
+				8936AD3A1681B11700EB60D5 /* NSString-SQLitePersistence.m */,
+				8936AD3B1681B11700EB60D5 /* NSString-UppercaseFirst.h */,
+				8936AD3C1681B11700EB60D5 /* NSString-UppercaseFirst.m */,
+				8936AD3D1681B11700EB60D5 /* SQLiteInstanceManager.h */,
+				8936AD3E1681B11700EB60D5 /* SQLiteInstanceManager.m */,
+				8936AD3F1681B11700EB60D5 /* SQLitePersistentObject.h */,
+				8936AD401681B11700EB60D5 /* SQLitePersistentObject.m */,
+				8936AD411681B11700EB60D5 /* UIColor-SQLitePersistentObject.h */,
+				8936AD421681B11700EB60D5 /* UIColor-SQLitePersistentObject.m */,
+				8936AD431681B11700EB60D5 /* UIImage-SQLitePersistence.h */,
+				8936AD441681B11700EB60D5 /* UIImage-SQLitePersistence.m */,
+			);
+			name = sqlitepersistentobjects;
+			sourceTree = "<group>";
+		};
+		89A6B505168AE5E900884DF7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				89A6B506168AE60A00884DF7 /* GSPreferencesWindowController.h */,
+				89A6B507168AE60A00884DF7 /* GSPreferencesWindowController.m */,
+				89A6B508168AE60A00884DF7 /* GSPreferencesWindowController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		89B140961682F92100253CE1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				89B140971682F94500253CE1 /* GSProjectInfo.h */,
+				89B140981682F94500253CE1 /* GSProjectInfo.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		89B140AB16847B3500253CE1 /* ProjectTypes */ = {
+			isa = PBXGroup;
+			children = (
+				89A6B4FF1689FFB200884DF7 /* project_node.js_small.png */,
+				89A6B5001689FFB200884DF7 /* project_node.js_small@2x.png */,
+				89A6B5011689FFB200884DF7 /* project_node.js.png */,
+				89A6B4F91689FD1600884DF7 /* project_python_small.png */,
+				89A6B4FA1689FD1600884DF7 /* project_python_small@2x.png */,
+				89A6B4FB1689FD1600884DF7 /* project_python.png */,
+				89A6B4631686012D00884DF7 /* project_default_small.png */,
+				89A6B4641686012D00884DF7 /* project_default_small@2x.png */,
+				89A6B4651686012D00884DF7 /* project_default.png */,
+				89A6B4661686012D00884DF7 /* project_php_small.png */,
+				89A6B4671686012D00884DF7 /* project_php_small@2x.png */,
+				89A6B4681686012D00884DF7 /* project_php.png */,
+				89A6B4691686012D00884DF7 /* project_rubyonrails_small.png */,
+				89A6B46A1686012D00884DF7 /* project_rubyonrails_small@2x.png */,
+				89A6B46B1686012D00884DF7 /* project_rubyonrails.png */,
+				89A6B46C1686012D00884DF7 /* project_xcodeproject_small.png */,
+				89A6B46D1686012D00884DF7 /* project_xcodeproject_small@2x.png */,
+				89A6B46E1686012D00884DF7 /* project_xcodeproject.png */,
+			);
+			path = ProjectTypes;
+			sourceTree = "<group>";
+		};
+		89B140B816857A7B00253CE1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				89B140B916857A9500253CE1 /* GSProjectInfoCellView.h */,
+				89B140BA16857A9500253CE1 /* GSProjectInfoCellView.m */,
+				89BD0817168AF0F200B671A1 /* GSProjectCellView.h */,
+				89BD0818168AF0F200B671A1 /* GSProjectCellView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		89FDA2DB1675D477003BFE02 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				8936AD241681B10900EB60D5 /* sqlitepersistentobjects */,
+				8936ACE6167F76FF00EB60D5 /* GACommandRunner */,
+				89FDB5C31675D48C003BFE02 /* ObjectiveGitFramework.xcodeproj */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		89FDB5C41675D48C003BFE02 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				89FDB5D71675D48D003BFE02 /* ObjectiveGit.framework */,
+				89FDB5D91675D48D003BFE02 /* libObjectiveGit-iOS.a */,
+				89FDB5DB1675D48D003BFE02 /* ObjectiveGitTests.octest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,10 +425,12 @@
 				89075F451670F536001A318D /* Sources */,
 				89075F461670F536001A318D /* Frameworks */,
 				89075F471670F536001A318D /* Resources */,
+				89A6B4DE16898A2600884DF7 /* Update Build Number */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				89FDB5E41675D499003BFE02 /* PBXTargetDependency */,
 			);
 			name = GitStatX;
 			productName = GitStatX;
@@ -160,16 +453,47 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				English,
 			);
 			mainGroup = 89075F3E1670F536001A318D;
 			productRefGroup = 89075F4A1670F536001A318D /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 89FDB5C41675D48C003BFE02 /* Products */;
+					ProjectRef = 89FDB5C31675D48C003BFE02 /* ObjectiveGitFramework.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				89075F481670F536001A318D /* GitStatX */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		89FDB5D71675D48D003BFE02 /* ObjectiveGit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ObjectiveGit.framework;
+			remoteRef = 89FDB5D61675D48D003BFE02 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		89FDB5D91675D48D003BFE02 /* libObjectiveGit-iOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libObjectiveGit-iOS.a";
+			remoteRef = 89FDB5D81675D48D003BFE02 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		89FDB5DB1675D48D003BFE02 /* ObjectiveGitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ObjectiveGitTests.octest;
+			remoteRef = 89FDB5DA1675D48D003BFE02 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		89075F471670F536001A318D /* Resources */ = {
@@ -182,10 +506,50 @@
 				89075F7016722D9F001A318D /* Icon.iconset in Resources */,
 				89075F7216722E06001A318D /* gnuplot in Resources */,
 				89075F7416722E22001A318D /* gitstats in Resources */,
+				89A6B46F1686012D00884DF7 /* project_default_small.png in Resources */,
+				89A6B4701686012D00884DF7 /* project_default_small@2x.png in Resources */,
+				89A6B4711686012D00884DF7 /* project_default.png in Resources */,
+				89A6B4721686012D00884DF7 /* project_php_small.png in Resources */,
+				89A6B4731686012D00884DF7 /* project_php_small@2x.png in Resources */,
+				89A6B4741686012D00884DF7 /* project_php.png in Resources */,
+				89A6B4751686012D00884DF7 /* project_rubyonrails_small.png in Resources */,
+				89A6B4761686012D00884DF7 /* project_rubyonrails_small@2x.png in Resources */,
+				89A6B4771686012D00884DF7 /* project_rubyonrails.png in Resources */,
+				89A6B4781686012D00884DF7 /* project_xcodeproject_small.png in Resources */,
+				89A6B4791686012D00884DF7 /* project_xcodeproject_small@2x.png in Resources */,
+				89A6B47A1686012D00884DF7 /* project_xcodeproject.png in Resources */,
+				89A6B4FC1689FD1600884DF7 /* project_python_small.png in Resources */,
+				89A6B4FD1689FD1600884DF7 /* project_python_small@2x.png in Resources */,
+				89A6B4FE1689FD1600884DF7 /* project_python.png in Resources */,
+				89A6B5021689FFB200884DF7 /* project_node.js_small.png in Resources */,
+				89A6B5031689FFB200884DF7 /* project_node.js_small@2x.png in Resources */,
+				89A6B5041689FFB200884DF7 /* project_node.js.png in Resources */,
+				89A6B50A168AE60A00884DF7 /* GSPreferencesWindowController.xib in Resources */,
+				89BD090B16909B7C00B671A1 /* git in Resources */,
+				898983D4169E77BA005BC900 /* add_folder_button.png in Resources */,
+				898983D5169E77BA005BC900 /* add_repository_button.png in Resources */,
+				898983D7169E7CAB005BC900 /* export_report_button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		89A6B4DE16898A2600884DF7 /* Update Build Number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Update Build Number";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n# 自动生成Build Number\n\nexport PATH=$PATH:/opt/local/bin\nGIT_COMMIT_COUNT=`git rev-list HEAD | wc -l | sed -e 's/ *//g' | xargs -n1 printf %d`\nINFO_PLIST=$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/Contents/Info.plist\n\n# 更新Build Number\n/usr/libexec/PlistBuddy \"$INFO_PLIST\" -c \"Set CFBundleVersion $GIT_COMMIT_COUNT\"\n\n# convert back to binary format\nplutil -convert binary1 \"$INFO_PLIST\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		89075F451670F536001A318D /* Sources */ = {
@@ -194,10 +558,41 @@
 			files = (
 				89075F5A1670F536001A318D /* main.m in Sources */,
 				89075F611670F536001A318D /* GSAppDelegate.m in Sources */,
+				8941AA02167AE240002FDB30 /* GSMainWindowController.m in Sources */,
+				8936ACEB167F76FF00EB60D5 /* GAAutoscrollTextView.m in Sources */,
+				8936ACEC167F76FF00EB60D5 /* GACommandRunner.m in Sources */,
+				8936AD451681B11700EB60D5 /* NSData-SQLitePersistence.m in Sources */,
+				8936AD461681B11700EB60D5 /* NSDate-SQLitePersistence.m in Sources */,
+				8936AD471681B11700EB60D5 /* NSMutableArray-MultipleSort.m in Sources */,
+				8936AD481681B11700EB60D5 /* NSMutableData-SQLitePersistence.m in Sources */,
+				8936AD491681B11700EB60D5 /* NSNumber-SQLitePersistence.m in Sources */,
+				8936AD4A1681B11700EB60D5 /* NSObject-ClassName.m in Sources */,
+				8936AD4B1681B11700EB60D5 /* NSObject-MissingKV.m in Sources */,
+				8936AD4C1681B11700EB60D5 /* NSObject-SQLitePersistence.m in Sources */,
+				8936AD4D1681B11700EB60D5 /* NSString-NumberStuff.m in Sources */,
+				8936AD4E1681B11700EB60D5 /* NSString-SQLiteColumnName.m in Sources */,
+				8936AD4F1681B11700EB60D5 /* NSString-SQLitePersistence.m in Sources */,
+				8936AD501681B11700EB60D5 /* NSString-UppercaseFirst.m in Sources */,
+				8936AD511681B11700EB60D5 /* SQLiteInstanceManager.m in Sources */,
+				8936AD521681B11700EB60D5 /* SQLitePersistentObject.m in Sources */,
+				8936AD531681B11700EB60D5 /* UIColor-SQLitePersistentObject.m in Sources */,
+				8936AD541681B11700EB60D5 /* UIImage-SQLitePersistence.m in Sources */,
+				89B140991682F94500253CE1 /* GSProjectInfo.m in Sources */,
+				89B140BB16857A9500253CE1 /* GSProjectInfoCellView.m in Sources */,
+				89A6B509168AE60A00884DF7 /* GSPreferencesWindowController.m in Sources */,
+				89BD0819168AF0F200B671A1 /* GSProjectCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		89FDB5E41675D499003BFE02 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ObjectiveGit;
+			targetProxy = 89FDB5E31675D499003BFE02 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		89075F561670F536001A318D /* InfoPlist.strings */ = {
@@ -281,11 +676,14 @@
 		89075F681670F536001A318D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = GitStatX/GitStatX.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GitStatX/GitStatX-Prefix.pch";
 				INFOPLIST_FILE = "GitStatX/GitStatX-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -293,11 +691,14 @@
 		89075F691670F536001A318D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = GitStatX/GitStatX.entitlements;
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GitStatX/GitStatX-Prefix.pch";
 				INFOPLIST_FILE = "GitStatX/GitStatX-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
