@@ -36,6 +36,9 @@
 		8936AD541681B11700EB60D5 /* UIImage-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 8936AD441681B11700EB60D5 /* UIImage-SQLitePersistence.m */; };
 		8936AD561681B12A00EB60D5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8936AD551681B12A00EB60D5 /* libsqlite3.dylib */; };
 		8941AA02167AE240002FDB30 /* GSMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8941AA01167AE240002FDB30 /* GSMainWindowController.m */; };
+		898983D4169E77BA005BC900 /* add_folder_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 898983D2169E77BA005BC900 /* add_folder_button.png */; };
+		898983D5169E77BA005BC900 /* add_repository_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 898983D3169E77BA005BC900 /* add_repository_button.png */; };
+		898983D7169E7CAB005BC900 /* export_report_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 898983D6169E7CAB005BC900 /* export_report_button.png */; };
 		89A6B46F1686012D00884DF7 /* project_default_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B4631686012D00884DF7 /* project_default_small.png */; };
 		89A6B4701686012D00884DF7 /* project_default_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B4641686012D00884DF7 /* project_default_small@2x.png */; };
 		89A6B4711686012D00884DF7 /* project_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A6B4651686012D00884DF7 /* project_default.png */; };
@@ -60,6 +63,7 @@
 		89B140B71685731000253CE1 /* ObjectiveGit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89FDB5D71675D48D003BFE02 /* ObjectiveGit.framework */; };
 		89B140BB16857A9500253CE1 /* GSProjectInfoCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B140BA16857A9500253CE1 /* GSProjectInfoCellView.m */; };
 		89BD0819168AF0F200B671A1 /* GSProjectCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BD0818168AF0F200B671A1 /* GSProjectCellView.m */; };
+		89BD090B16909B7C00B671A1 /* git in Resources */ = {isa = PBXBuildFile; fileRef = 89BD090A16909B7C00B671A1 /* git */; };
 		89FDA25016724E26003BFE02 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89FDA24F16724E26003BFE02 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -150,6 +154,9 @@
 		8936AD551681B12A00EB60D5 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		8941AA00167AE240002FDB30 /* GSMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSMainWindowController.h; sourceTree = "<group>"; };
 		8941AA01167AE240002FDB30 /* GSMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSMainWindowController.m; sourceTree = "<group>"; };
+		898983D2169E77BA005BC900 /* add_folder_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_folder_button.png; sourceTree = "<group>"; };
+		898983D3169E77BA005BC900 /* add_repository_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_repository_button.png; sourceTree = "<group>"; };
+		898983D6169E7CAB005BC900 /* export_report_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = export_report_button.png; sourceTree = "<group>"; };
 		89A6B4631686012D00884DF7 /* project_default_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = project_default_small.png; sourceTree = "<group>"; };
 		89A6B4641686012D00884DF7 /* project_default_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "project_default_small@2x.png"; sourceTree = "<group>"; };
 		89A6B4651686012D00884DF7 /* project_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = project_default.png; sourceTree = "<group>"; };
@@ -178,6 +185,7 @@
 		89BD0817168AF0F200B671A1 /* GSProjectCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSProjectCellView.h; sourceTree = "<group>"; };
 		89BD0818168AF0F200B671A1 /* GSProjectCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSProjectCellView.m; sourceTree = "<group>"; };
 		89BD08FF16904B0400B671A1 /* GitStatX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = GitStatX.entitlements; sourceTree = "<group>"; };
+		89BD090A16909B7C00B671A1 /* git */ = {isa = PBXFileReference; lastKnownFileType = folder; path = git; sourceTree = "<group>"; };
 		89FDA24F16724E26003BFE02 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		89FDB5C31675D48C003BFE02 /* ObjectiveGitFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ObjectiveGitFramework.xcodeproj; path = "objective-git/ObjectiveGitFramework.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -269,7 +277,11 @@
 		89075F6A1670F54C001A318D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				898983D6169E7CAB005BC900 /* export_report_button.png */,
+				898983D2169E77BA005BC900 /* add_folder_button.png */,
+				898983D3169E77BA005BC900 /* add_repository_button.png */,
 				89B140AB16847B3500253CE1 /* ProjectTypes */,
+				89BD090A16909B7C00B671A1 /* git */,
 				89075F7316722E22001A318D /* gitstats */,
 				89075F7116722E06001A318D /* gnuplot */,
 				89075F6F16722D9F001A318D /* Icon.iconset */,
@@ -513,6 +525,10 @@
 				89A6B5031689FFB200884DF7 /* project_node.js_small@2x.png in Resources */,
 				89A6B5041689FFB200884DF7 /* project_node.js.png in Resources */,
 				89A6B50A168AE60A00884DF7 /* GSPreferencesWindowController.xib in Resources */,
+				89BD090B16909B7C00B671A1 /* git in Resources */,
+				898983D4169E77BA005BC900 /* add_folder_button.png in Resources */,
+				898983D5169E77BA005BC900 /* add_repository_button.png in Resources */,
+				898983D7169E7CAB005BC900 /* export_report_button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

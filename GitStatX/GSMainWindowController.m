@@ -207,7 +207,7 @@
 
 - (void)exportReport:(id)sender {
     GSProjectInfo *clickedProject = [self clickedProject];
-    if (clickedProject != nil) {
+    if (clickedProject != nil && !clickedProject.isFolder) {
         NSSavePanel *panel = [NSSavePanel savePanel];
         panel.title = [NSString stringWithFormat:@"Export statistic of %@", clickedProject.name];
         [panel setNameFieldStringValue:[NSString stringWithFormat:@"GitStatX - %@", clickedProject.name]];
@@ -444,6 +444,17 @@
 
 
 #pragma mark - Menu delegate
+
+- (BOOL)validateToolbarItem:(NSToolbarItem *)theItem {
+    GSProjectInfo *clickedProject = [self clickedProject];
+    BOOL isFolder = clickedProject.isFolder;
+    if (theItem.action == @selector(exportReport:)) {
+        return clickedProject != nil && !isFolder;
+    }
+    
+    return YES;
+}
+
 
 - (BOOL)validateMenuItem:(NSMenuItem *)menuItem {
     GSProjectInfo *clickedProject = [self clickedProject];
