@@ -32,6 +32,8 @@
 - (IBAction)regenerateReport:(id)sender;
 - (IBAction)gotoReportTab:(id)sender;
 
+- (IBAction)forkOnGitHub:(id)sender;
+
 @property (nonatomic, strong)   NSArray     *projects;
 @property (nonatomic, strong)   GSProjectInfo   *draggedProject;
 

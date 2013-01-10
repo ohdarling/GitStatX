@@ -306,6 +306,11 @@
 }
 
 
+- (void)forkOnGitHub:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/ohdarling/GitStatX"]];
+}
+
+
 #pragma mark - SplitView delegate
 
 - (CGFloat)splitView:(NSSplitView *)splitView constrainMinCoordinate:(CGFloat)proposedMinimumPosition ofSubviewAt:(NSInteger)dividerIndex {
