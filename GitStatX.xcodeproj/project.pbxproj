@@ -697,7 +697,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GitStatX/GitStatX-Prefix.pch";
 				INFOPLIST_FILE = "GitStatX/GitStatX-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "@execuable_path";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -708,12 +707,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = GitStatX/GitStatX.entitlements;
-				CODE_SIGN_IDENTITY = "Developer ID Application: Jiwei Xu";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GitStatX/GitStatX-Prefix.pch";
 				INFOPLIST_FILE = "GitStatX/GitStatX-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "@execuable_path";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

@@ -80,7 +80,7 @@ static NSMutableDictionary *commandRunners = nil;
         runner.commandPath = @"python";
         runner.environment = @{
         @"PATH": [NSString stringWithFormat:@"%@:%@", [[NSBundle mainBundle] pathForResource:@"bin" ofType:@"" inDirectory:@"git"], [NSProcessInfo processInfo].environment[@"PATH"]],
-        @"GNUPLOT": [[NSBundle mainBundle] pathForResource:@"gnuplot" ofType:@"" inDirectory:@"gnuplot"]
+        @"GNUPLOT": [[NSBundle mainBundle] pathForResource:@"gnuplot" ofType:@"" inDirectory:@"gnuplot/bin"]
         };
         runner.arguments = [NSArray arrayWithObjects:
                             [[NSBundle mainBundle] pathForResource:@"gitstats" ofType:@"" inDirectory:@"gitstats"],

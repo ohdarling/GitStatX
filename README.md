@@ -11,6 +11,12 @@ GitStatX is a GUI application for gitstats and supports many features for manage
 * Auto regenerate all outdated reports
 * Project type indicator
 
+## Downlaods
+
+Latest version: [GitStatX v1.0](https://github.com/ohdarling/GitStatX/wiki/files/GitStatX-v1.0.zip)
+
+[View all downloads](https://github.com/ohdarling/GitStatX/wiki/Downloads)
+
 ## With Special Thanks
 
 * git
@@ -19,6 +25,11 @@ GitStatX is a GUI application for gitstats and supports many features for manage
 * bootstrap
 * sqlitepersistentobjects
 * objective-git
+
+## Related Sources
+
+* gitstats with bootstrap style: <https://github.com/ohdarling/gitstats>
+* fix lib path script: <https://gist.github.com/4225568>
 
 ## More Apps
 
